@@ -104,12 +104,12 @@ export default async function ProductDetailPage({ params }: Props) {
           </nav>
 
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
-            <div className="relative aspect-[5/4] overflow-hidden rounded-md bg-mist-100">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-md border border-sun-500/25 bg-mist-100">
               <Image
                 src={product.image}
                 alt={product.name}
                 fill
-                className="object-cover"
+                className="object-contain p-4 sm:p-6"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />
@@ -146,7 +146,7 @@ export default async function ProductDetailPage({ params }: Props) {
                     {product.variants.map((v) => (
                       <li
                         key={v}
-                        className="rounded-md border border-sun-500/20 bg-sun-50 px-3 py-1.5 text-sm"
+                        className="rounded-md border border-sun-500/30 bg-sun-50 px-3 py-1.5 text-sm font-medium text-ink-900"
                       >
                         {v}
                       </li>
@@ -159,33 +159,33 @@ export default async function ProductDetailPage({ params }: Props) {
 
           <div className="mt-14 grid gap-8 lg:grid-cols-3">
             <div>
-              <h2 className="font-display text-2xl font-semibold">Features</h2>
+              <h2 className="font-display text-2xl font-semibold text-ink-950">Features</h2>
               <ul className="mt-4 space-y-2 text-sm text-ink-800">
                 {product.features.map((f) => (
                   <li key={f} className="flex gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sun-400" />
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-flame-600" aria-hidden />
                     {f}
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h2 className="font-display text-2xl font-semibold">Specifications</h2>
+              <h2 className="font-display text-2xl font-semibold text-ink-950">Specifications</h2>
               <dl className="mt-4 space-y-3 text-sm">
                 {product.specifications.map((spec) => (
-                  <div key={spec.label} className="border-b border-sun-500/15 pb-3">
-                    <dt className="font-medium text-ink-900">{spec.label}</dt>
+                  <div key={spec.label} className="border-b border-sun-500/25 pb-3">
+                    <dt className="font-semibold text-ink-950">{spec.label}</dt>
                     <dd className="mt-1 text-ink-800">{spec.value}</dd>
                   </div>
                 ))}
               </dl>
             </div>
             <div>
-              <h2 className="font-display text-2xl font-semibold">Applications</h2>
+              <h2 className="font-display text-2xl font-semibold text-ink-950">Applications</h2>
               <ul className="mt-4 space-y-2 text-sm text-ink-800">
                 {product.applications.map((a) => (
                   <li key={a} className="flex gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sun-400" />
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-flame-600" aria-hidden />
                     {a}
                   </li>
                 ))}

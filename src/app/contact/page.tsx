@@ -39,7 +39,7 @@ export default function ContactPage() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-4 text-xs text-ink-700">GSTIN: {company.gstin}</p>
+              <p className="mt-4 text-xs font-medium text-ink-800">GSTIN: {company.gstin}</p>
             </div>
 
             <div>

@@ -23,10 +23,11 @@ export default function HomePage() {
           alt="Sai Vision Engineering industrial equipment"
           fill
           priority
-          className="object-cover object-center opacity-30 transition duration-[1.2s] will-change-transform"
+          className="object-cover object-center opacity-25 transition duration-[1.2s] will-change-transform"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/88 to-ink-900/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/92 to-ink-900/55" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-transparent to-ink-950/50 sm:via-transparent sm:to-ink-950/35" />
         <div className="absolute inset-0 bg-hero-sheen" />
         <div className="absolute inset-x-0 bottom-0 h-1.5 bg-sun-band-animated" />
         <div className="pointer-events-none absolute right-[8%] top-[22%] h-28 w-28 rounded-full bg-sun-400/25 blur-3xl float-soft" />
@@ -38,7 +39,7 @@ export default function HomePage() {
           <h1 className="mt-4 max-w-4xl font-display text-[2.15rem] font-semibold leading-[1.08] tracking-tight text-white xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl animate-fade-up [animation-delay:100ms]">
             Process equipment and plant support you can specify with confidence.
           </h1>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/95 xs:text-base sm:mt-6 sm:text-lg animate-fade-up [animation-delay:160ms]">
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-on-dark-muted xs:text-base sm:mt-6 sm:text-lg animate-fade-up [animation-delay:160ms]">
             Glass-lined equipment, vessels, lined piping, valves, mechanical seals, and NORD drive
             solutions — backed by authorised contractor and dealership relationships for chemical
             and pharmaceutical plants.
@@ -50,13 +51,13 @@ export default function HomePage() {
             <ButtonLink
               href="/request-quote"
               variant="ghost"
-              className="w-full border border-white/25 xs:w-auto"
+              className="w-full xs:w-auto"
             >
               Request a Quote
             </ButtonLink>
           </div>
 
-          <dl className="mt-10 grid max-w-3xl gap-4 border-t border-white/15 pt-6 xs:mt-12 sm:mt-14 sm:grid-cols-3 sm:gap-6 sm:pt-8">
+          <dl className="mt-10 grid max-w-3xl gap-4 border-t border-white/25 pt-6 xs:mt-12 sm:mt-14 sm:grid-cols-3 sm:gap-6 sm:pt-8">
             {[
               ["Authorised", "GMM Pfaudler contractor"],
               ["Certified", "ISO 9001:2015"],
@@ -64,13 +65,13 @@ export default function HomePage() {
             ].map(([label, value], i) => (
               <div
                 key={label}
-                className="rounded-md border border-white/10 bg-white/5 px-3 py-3 transition-all duration-300 hover:-translate-y-1 hover:border-sun-400/40 hover:bg-white/10 sm:border-transparent sm:bg-transparent sm:px-0 sm:py-0 sm:hover:translate-y-0 sm:hover:bg-transparent"
+                className="surface-on-dark px-3 py-3 sm:border-transparent sm:bg-transparent sm:px-0 sm:py-0 sm:hover:translate-y-0 sm:hover:bg-transparent"
                 style={{ animationDelay: `${280 + i * 60}ms` }}
               >
-                <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[#ffcc66] sm:text-xs">
+                <dt className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-accent-on-dark sm:text-xs">
                   {label}
                 </dt>
-                <dd className="mt-1.5 text-sm text-white/95">{value}</dd>
+                <dd className="mt-1.5 text-sm text-on-dark-muted">{value}</dd>
               </div>
             ))}
           </dl>
@@ -128,12 +129,12 @@ export default function HomePage() {
               src="/images/products/img-1.png"
               alt="Industrial reactor and process equipment"
               fill
-              className="object-cover opacity-90"
+              className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
             <div className="absolute inset-x-0 top-0 z-[2] h-1 bg-sun-band" />
-            <div className="absolute inset-x-0 bottom-0 z-[2] bg-gradient-to-t from-ink-950 to-transparent p-4 sm:p-6">
-              <p className="text-sm text-white/95">
+            <div className="absolute inset-x-0 bottom-0 z-[2] bg-gradient-to-t from-ink-950 via-ink-950/80 to-transparent p-4 sm:p-6">
+              <p className="text-sm text-on-dark-muted">
                 Precisely fabricated equipment with sturdy construction, long service life, and
                 minimum maintenance requirements.
               </p>
@@ -202,8 +203,8 @@ export default function HomePage() {
           <div className="grid gap-3 xs:gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {company.whyChooseUs.map((item, index) => (
               <Reveal key={item} delay={(Math.min(index % 4, 3) + 1) as 1 | 2 | 3 | 4}>
-                <div className="rounded-md border border-white/25 bg-white/10 px-4 py-4 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white/15 sm:px-5 sm:py-5">
-                  <span className="mr-3 inline-block h-2 w-2 rounded-full bg-[#ffcc66]" />
+                <div className="surface-on-dark px-4 py-4 text-sm font-medium sm:px-5 sm:py-5">
+                  <span className="mr-3 inline-block h-2 w-2 rounded-full bg-[#ffcc66]" aria-hidden />
                   {item}
                 </div>
               </Reveal>
@@ -226,8 +227,8 @@ export default function HomePage() {
           <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:col-span-8">
             {industries.map((industry, index) => (
               <Reveal key={industry.slug} delay={(index + 1) as 1 | 2 | 3}>
-                <Link href={`/industries/${industry.slug}`} className="surface-card block h-full p-5 sm:p-6">
-                  <h3 className="font-display text-xl font-semibold text-ink-950 transition-colors group-hover:text-flame-600 sm:text-2xl">
+                <Link href={`/industries/${industry.slug}`} className="group surface-card block h-full p-5 sm:p-6">
+                  <h3 className="font-display text-xl font-semibold text-ink-950 transition-colors group-hover:text-flame-700 sm:text-2xl">
                     {industry.name}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-ink-800">

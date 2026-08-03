@@ -12,7 +12,7 @@ export function ClientMarquee() {
           {items.map((client, idx) => (
             <span
               key={`${client}-${idx}`}
-              className="whitespace-nowrap text-xs font-bold uppercase tracking-[0.14em] text-[#2c1d0e] sm:text-sm"
+              className="whitespace-nowrap text-xs font-extrabold uppercase tracking-[0.14em] text-ink-900 sm:text-sm"
             >
               {client}
             </span>

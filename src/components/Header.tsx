@@ -35,8 +35,8 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ease-smooth ${
         scrolled || open
-          ? "border-b border-sun-500/20 bg-mist-50/95 shadow-soft backdrop-blur-md"
-          : "border-b border-transparent bg-mist-50/85 backdrop-blur-sm"
+          ? "border-b border-sun-500/25 bg-[#fffdf8] shadow-soft"
+          : "border-b border-sun-500/15 bg-[#fffdf8]/97 backdrop-blur-md"
       }`}
     >
       <div className="h-1 w-full bg-sun-band-animated" />
@@ -54,7 +54,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="relative text-sm font-medium text-ink-900 transition-colors duration-300 hover:text-flame-700 after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-sun-band after:transition-all after:duration-300 hover:after:w-full"
+              className="relative text-sm font-semibold text-ink-900 transition-colors duration-300 hover:text-flame-700 focus-visible:text-flame-700 after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-sun-band after:transition-all after:duration-300 hover:after:w-full"
             >
               {item.label}
             </Link>
@@ -106,9 +106,10 @@ export function Header() {
 
       <div
         id="mobile-nav"
-        className={`overflow-hidden border-t border-sun-500/15 bg-mist-50 transition-all duration-300 ease-smooth xl:hidden ${
-          open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
+        className={`overflow-hidden border-t border-sun-500/20 bg-[#fffdf8] transition-all duration-300 ease-smooth xl:hidden ${
+          open ? "max-h-[80vh] opacity-100" : "pointer-events-none max-h-0 opacity-0"
         }`}
+        aria-hidden={!open}
       >
         <nav
           className={`container-site flex flex-col gap-1 py-3 ${open ? "animate-slide-down" : ""}`}

@@ -45,10 +45,10 @@ export default async function CategoryPage({ params }: Props) {
               <Link
                 key={c.slug}
                 href={`/products/${c.slug}`}
-                className={`rounded-md px-3 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.12em] transition sm:text-xs ${
+                className={`rounded-md px-3 py-2 text-[0.65rem] font-bold uppercase tracking-[0.12em] transition focus-visible:ring-2 focus-visible:ring-sun-400 sm:text-xs ${
                   c.slug === slug
                     ? "bg-[#e85d04] text-white shadow-soft"
-                    : "border border-[#d4a017] bg-white text-[#1a1208] hover:border-[#e85d04]"
+                    : "border border-[#d4a017] bg-white text-[#1a1208] hover:border-[#e85d04] hover:bg-[#fff8e8]"
                 }`}
               >
                 {c.name}

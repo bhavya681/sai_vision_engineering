@@ -128,7 +128,7 @@ export function InquiryForm({ defaultProduct = "" }: Props) {
         <label className="block text-sm">
           <span className="mb-1.5 block font-medium text-ink-900">Category</span>
           <select
-            className="w-full rounded-md border border-sun-500/25 bg-white px-3 py-3 outline-none transition focus:border-sun-500 focus:shadow-glow"
+            className="field-control"
             value={values.category}
             onChange={(e) => setValues((s) => ({ ...s, category: e.target.value }))}
           >
@@ -154,16 +154,21 @@ export function InquiryForm({ defaultProduct = "" }: Props) {
         </span>
         <textarea
           rows={5}
-          className="w-full rounded-md border border-sun-500/25 bg-white px-3 py-3 outline-none transition focus:border-sun-500 focus:shadow-glow"
+          className="field-control"
           value={values.message}
           onChange={(e) => setValues((s) => ({ ...s, message: e.target.value }))}
           aria-invalid={Boolean(errors.message)}
+          aria-required="true"
         />
-        {errors.message ? <span className="mt-1 block text-xs text-ember-600">{errors.message}</span> : null}
+        {errors.message ? (
+          <span className="mt-1.5 block text-sm font-medium text-ember-600" role="alert">
+            {errors.message}
+          </span>
+        ) : null}
       </label>
 
       {status === "error" ? (
-        <p className="text-sm text-ember-600" role="alert">
+        <p className="rounded-md border border-ember-600/30 bg-red-50 px-3 py-2 text-sm font-medium text-ember-600" role="alert">
           Something went wrong. Please try again or email us directly.
         </p>
       ) : null}
@@ -197,12 +202,17 @@ function Field({
       </span>
       <input
         type={type}
-        className="w-full rounded-md border border-sun-500/25 bg-white px-3 py-3 outline-none transition focus:border-sun-500 focus:shadow-glow"
+        className="field-control"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         aria-invalid={Boolean(error)}
+        aria-required={required || undefined}
       />
-      {error ? <span className="mt-1 block text-xs text-ember-600">{error}</span> : null}
+      {error ? (
+        <span className="mt-1.5 block text-sm font-medium text-ember-600" role="alert">
+          {error}
+        </span>
+      ) : null}
     </label>
   );
 }

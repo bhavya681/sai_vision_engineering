@@ -37,7 +37,7 @@ export default async function IndustryDetailPage({ params }: Props) {
       <PageHero eyebrow="Industry" title={industry.name} description={industry.description}>
         <div className="mt-8 flex flex-wrap gap-3">
           <ButtonLink href="/request-quote">Request a Quote</ButtonLink>
-          <ButtonLink href="/products" variant="ghost" className="border border-white/20">
+          <ButtonLink href="/products" variant="ghost">
             Browse Products
           </ButtonLink>
         </div>
@@ -51,7 +51,7 @@ export default async function IndustryDetailPage({ params }: Props) {
               {industry.useCases.map((item) => (
                 <li
                   key={item}
-                  className="rounded-md border border-sun-500/20 bg-white px-4 py-3 text-sm text-ink-800"
+                  className="rounded-md border border-sun-500/30 bg-white px-4 py-3 text-sm font-medium text-ink-800"
                 >
                   {item}
                 </li>
@@ -70,7 +70,7 @@ export default async function IndustryDetailPage({ params }: Props) {
                     href={`/products/${category.slug}`}
                     className="surface-card block p-4 sm:p-5"
                   >
-                    <h3 className="font-display text-xl font-semibold">{category.name}</h3>
+                    <h3 className="font-display text-xl font-semibold text-ink-950">{category.name}</h3>
                     <p className="mt-2 text-sm text-ink-800">{category.shortDescription}</p>
                   </Link>
                 ) : null,

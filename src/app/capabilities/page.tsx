@@ -58,7 +58,7 @@ export default function CapabilitiesPage() {
           <div className="grid gap-5 md:grid-cols-2">
             {capabilities.map((item) => (
               <article key={item.title} className="surface-card p-5 sm:p-6">
-                <h3 className="font-display text-2xl font-semibold">{item.title}</h3>
+                <h3 className="font-display text-2xl font-semibold text-ink-950">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink-800">{item.description}</p>
               </article>
             ))}
@@ -76,9 +76,9 @@ export default function CapabilitiesPage() {
           />
           <div className="grid gap-3 sm:grid-cols-3 sm:gap-4">
             {["Spark testing", "Thickness testing", "Visual inspection"].map((test) => (
-              <div key={test} className="rounded-md border border-sun-500/25 bg-white/5 px-4 py-5 sm:px-5 sm:py-6">
-                <h3 className="font-display text-xl font-semibold">{test}</h3>
-                <p className="mt-2 text-sm text-white/95">
+              <div key={test} className="surface-on-dark px-4 py-5 sm:px-5 sm:py-6">
+                <h3 className="font-display text-xl font-semibold text-white">{test}</h3>
+                <p className="mt-2 text-sm text-on-dark-muted">
                   Performed during equipment handling stages as part of service programs.
                 </p>
               </div>

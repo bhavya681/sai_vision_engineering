@@ -29,7 +29,7 @@ export function CtaBanner({
           <h2 className="mt-4 font-display text-2xl font-semibold text-white xs:text-3xl sm:text-4xl">
             {title}
           </h2>
-          <p className="mt-3 text-sm text-white/95 xs:text-base sm:mt-4 sm:text-lg">
+          <p className="mt-3 text-sm text-on-dark-muted xs:text-base sm:mt-4 sm:text-lg">
             {description}
           </p>
           <div className="mt-6 flex flex-col gap-3 xs:flex-row xs:flex-wrap sm:mt-8">

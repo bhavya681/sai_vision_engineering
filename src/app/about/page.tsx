@@ -60,7 +60,7 @@ export default function AboutPage() {
                 src="/images/products/img-4.png"
                 alt="Process vessels and condensers"
                 fill
-                className="object-cover opacity-90"
+                className="object-contain p-2"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
@@ -72,7 +72,7 @@ export default function AboutPage() {
         <div className="container-site grid gap-6 lg:grid-cols-2">
           <div className="rounded-md bg-warm-panel p-6 text-white xs:p-8 sm:p-10">
             <p className="eyebrow eyebrow-on-dark">Vision</p>
-            <p className="mt-4 font-display text-2xl leading-snug sm:text-3xl">
+            <p className="mt-4 font-display text-2xl leading-snug text-white sm:text-3xl">
               “{company.vision}”
             </p>
           </div>
@@ -95,7 +95,7 @@ export default function AboutPage() {
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {capabilities.map((item) => (
               <div key={item.title} className="surface-card p-5 sm:p-6">
-                <h3 className="font-display text-xl font-semibold">{item.title}</h3>
+                <h3 className="font-display text-xl font-semibold text-ink-950">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-800">{item.description}</p>
               </div>
             ))}
@@ -128,7 +128,7 @@ export default function AboutPage() {
           <div className="grid gap-5 lg:grid-cols-3">
             {company.partnerships.map((p) => (
               <article key={p.name} className="surface-card p-5 sm:p-6">
-                <h3 className="font-display text-2xl font-semibold">{p.name}</h3>
+                <h3 className="font-display text-2xl font-semibold text-ink-950">{p.name}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink-800">{p.detail}</p>
               </article>
             ))}

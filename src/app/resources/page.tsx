@@ -39,7 +39,7 @@ export default function ResourcesPage() {
             {downloads.map((doc) => (
               <article
                 key={doc.href}
-                className="flex flex-col justify-between gap-5 rounded-md border border-sun-500/20 bg-white p-5 shadow-soft xs:p-6 sm:flex-row sm:items-center"
+                className="flex flex-col justify-between gap-5 rounded-md border border-sun-500/30 bg-white p-5 shadow-soft xs:p-6 sm:flex-row sm:items-center"
               >
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-flame-700">

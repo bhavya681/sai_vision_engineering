@@ -35,7 +35,7 @@ export function SectionHeading({
       {description ? (
         <p
           className={`mt-3 text-sm leading-relaxed xs:text-base sm:mt-4 sm:text-lg ${
-            light ? "text-white/95" : "text-ink-800"
+            light ? "text-on-dark-muted" : "text-ink-800"
           }`}
         >
           {description}

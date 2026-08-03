@@ -24,12 +24,12 @@ export function Footer() {
               <span className="block font-display text-lg font-semibold text-white sm:text-xl">
                 {company.name}
               </span>
-              <span className="mt-1 block text-[0.65rem] uppercase tracking-[0.16em] text-[#ffcc66] sm:text-xs">
+              <span className="mt-1 block text-[0.65rem] uppercase tracking-[0.16em] text-accent-on-dark sm:text-xs">
                 {company.tagline}
               </span>
             </span>
           </Link>
-          <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/90">
+          <p className="mt-5 max-w-sm text-sm leading-relaxed text-on-dark-muted">
             {company.summary}
           </p>
           <div className="mt-5 flex items-center gap-3">
@@ -41,24 +41,24 @@ export function Footer() {
               className="h-14 w-14 object-contain"
             />
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#ffcc66]">
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent-on-dark">
                 Certified
               </p>
               <p className="text-sm font-semibold text-white">ISO 9001:2015</p>
             </div>
           </div>
-          <p className="mt-4 text-xs text-white/80">
+          <p className="mt-4 text-xs text-on-dark-muted">
             Presence: {company.regions.join(" · ")}
           </p>
-          <p className="mt-2 text-xs text-white/80">GSTIN: {company.gstin}</p>
+          <p className="mt-2 text-xs text-on-dark-muted">GSTIN: {company.gstin}</p>
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 md:gap-10 lg:col-span-8">
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-[#ffcc66]">
+            <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-accent-on-dark">
               Explore
             </h3>
-            <ul className="mt-4 space-y-2 text-sm text-white/90">
+            <ul className="mt-4 space-y-2 text-sm text-on-dark-muted">
               {[
                 ["About", "/about"],
                 ["Products", "/products"],
@@ -69,7 +69,10 @@ export function Footer() {
                 ["Request a Quote", "/request-quote"],
               ].map(([label, href]) => (
                 <li key={href}>
-                  <Link href={href} className="transition-colors hover:text-[#ffcc66]">
+                  <Link
+                    href={href}
+                    className="text-white transition-colors hover:text-[#ffcc66] focus-visible:text-[#ffcc66]"
+                  >
                     {label}
                   </Link>
                 </li>
@@ -78,15 +81,15 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-[#ffcc66]">
+            <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-accent-on-dark">
               Products
             </h3>
-            <ul className="mt-4 space-y-2 text-sm text-white/90">
+            <ul className="mt-4 space-y-2 text-sm">
               {categories.map((c) => (
                 <li key={c.slug}>
                   <Link
                     href={`/products/${c.slug}`}
-                    className="transition-colors hover:text-[#ffcc66]"
+                    className="text-white transition-colors hover:text-[#ffcc66] focus-visible:text-[#ffcc66]"
                   >
                     {c.name}
                   </Link>
@@ -96,14 +99,14 @@ export function Footer() {
           </div>
 
           <div className="sm:col-span-2 md:col-span-1">
-            <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-[#ffcc66]">
+            <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-accent-on-dark">
               Contact
             </h3>
-            <ul className="mt-4 space-y-3 text-sm text-white/90">
+            <ul className="mt-4 space-y-3 text-sm">
               <li>
                 <a
                   href={`tel:+91${company.contacts.phones[0].number}`}
-                  className="transition-colors hover:text-[#ffcc66]"
+                  className="text-white transition-colors hover:text-[#ffcc66] focus-visible:text-[#ffcc66]"
                 >
                   {company.contacts.primaryName}: {company.contacts.phones[0].number}
                 </a>
@@ -112,7 +115,7 @@ export function Footer() {
                 <li key={email}>
                   <a
                     href={`mailto:${email}`}
-                    className="break-all transition-colors hover:text-[#ffcc66]"
+                    className="break-all text-white transition-colors hover:text-[#ffcc66] focus-visible:text-[#ffcc66]"
                   >
                     {email}
                   </a>
@@ -121,14 +124,14 @@ export function Footer() {
               <li>
                 <a
                   href={`https://${company.websiteDisplay}`}
-                  className="transition-colors hover:text-[#ffcc66]"
+                  className="text-white transition-colors hover:text-[#ffcc66] focus-visible:text-[#ffcc66]"
                   target="_blank"
                   rel="noreferrer"
                 >
                   {company.websiteDisplay}
                 </a>
               </li>
-              <li className="pt-2 text-white/80">
+              <li className="pt-2 text-on-dark-muted">
                 Industries: {industries.map((i) => i.name).join(" · ")}
               </li>
             </ul>
@@ -136,16 +139,22 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/15">
-        <div className="container-site flex flex-col gap-3 py-5 text-xs text-white/80 sm:flex-row sm:items-center sm:justify-between">
+      <div className="border-t border-white/20">
+        <div className="container-site flex flex-col gap-3 py-5 text-xs text-on-dark-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {year} {company.name}. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-4 sm:gap-5">
-            <Link href="/privacy" className="transition-colors hover:text-[#ffcc66]">
+            <Link
+              href="/privacy"
+              className="text-white transition-colors hover:text-[#ffcc66] focus-visible:text-[#ffcc66]"
+            >
               Privacy Policy
             </Link>
-            <Link href="/terms" className="transition-colors hover:text-[#ffcc66]">
+            <Link
+              href="/terms"
+              className="text-white transition-colors hover:text-[#ffcc66] focus-visible:text-[#ffcc66]"
+            >
               Terms of Use
             </Link>
           </div>
