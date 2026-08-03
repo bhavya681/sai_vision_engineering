@@ -37,7 +37,7 @@ export default async function IndustryDetailPage({ params }: Props) {
       <PageHero eyebrow="Industry" title={industry.name} description={industry.description}>
         <div className="mt-8 flex flex-wrap gap-3">
           <ButtonLink href="/request-quote">Request a Quote</ButtonLink>
-          <ButtonLink href="/products" variant="ghost">
+          <ButtonLink href="/products" variant="secondary">
             Browse Products
           </ButtonLink>
         </div>

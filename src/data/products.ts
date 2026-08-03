@@ -36,7 +36,7 @@ export const categories: Category[] = [
       "Glass-lined equipment and spare parts for corrosive process applications.",
     description:
       "Sai Vision Engineering supplies complete glass-lined equipment and all types of spare parts, with focus on quality, innovation, technology, sustainability, and cost-effectiveness.",
-    image: "/images/products/img-5.png",
+    image: "/images/products/glass-lined-components.png",
   },
   {
     slug: "vessels-heat-transfer",
@@ -45,7 +45,7 @@ export const categories: Category[] = [
       "S.S./M.S. reactors, storage tanks, and condensers for process plants.",
     description:
       "S.S./M.S. reactors, storage tanks, and condensers manufactured by M/S. Kulswamini Enterprises, supplied to meet evolving process plant requirements.",
-    image: "/images/products/img-4.png",
+    image: "/images/products/reactor-storage-condenser.png",
   },
   {
     slug: "lined-piping",
@@ -54,7 +54,7 @@ export const categories: Category[] = [
       "M.S./S.S. pipelines and fittings with PTFE, PFA, and FEP linings.",
     description:
       "Specialized supply of M.S. and S.S. pipelines, fittings, and accessories with PTFE, PFA, and FEP linings for corrosion-resistant process transfer.",
-    image: "/images/products/img-6.png",
+    image: "/images/products/lined-piping-fittings.png",
   },
   {
     slug: "valves-accessories",
@@ -63,7 +63,7 @@ export const categories: Category[] = [
       "Industrial valves, accessories, and gasket solutions with service support.",
     description:
       "All types of valves and accessories, along with gaskets, are supplied and serviced with attention to quality and timeliness.",
-    image: "/images/products/img-2.png",
+    image: "/images/products/industrial-valves-profile.png",
   },
   {
     slug: "mechanical-seals",
@@ -72,7 +72,7 @@ export const categories: Category[] = [
       "Mechanical seals for pumps, reactors, ships, and industrial plant equipment.",
     description:
       "Mechanical seals for applications ranging from ships, pumps, and reactors to industrial plant equipment are readily available.",
-    image: "/images/products/img-3.png",
+    image: "/images/products/mechanical-seals-gallery.png",
   },
   {
     slug: "nord-drive-systems",
@@ -81,7 +81,7 @@ export const categories: Category[] = [
       "NORD geared motors and drive solutions for pumps, reactors, and plant equipment.",
     description:
       "As a registered Getriebebau NORD dealer and prime pan-India dealer for NORD drive systems, we supply geared motor series with high output torque and high efficiency, customized to application needs.",
-    image: "/images/products/img-7.png",
+    image: "/images/products/nord-geared-drive.png",
   },
 ];
 
@@ -109,7 +109,7 @@ export const products: Product[] = [
       "Pharmaceutical manufacturing",
     ],
     variants: ["Manhole covers", "Flanged discs", "Lined pipe sections", "Agitator components"],
-    image: "/images/products/img-5.png",
+    image: "/images/products/glass-lined-spares.png",
     featured: true,
   },
   {
@@ -129,7 +129,7 @@ export const products: Product[] = [
       { label: "Category", value: "Glass-lined agitator components" },
     ],
     applications: ["Mixing in glass-lined reactors", "Corrosive chemical processes"],
-    image: "/images/products/img-5.png",
+    image: "/images/products/glass-lined-agitator.png",
   },
   {
     slug: "ss-ms-reactor",
@@ -153,7 +153,7 @@ export const products: Product[] = [
       "Pharmaceutical process plants",
       "Industrial process units",
     ],
-    image: "/images/products/img-1.png",
+    image: "/images/products/ss-ms-reactor-profile.png",
     featured: true,
   },
   {
@@ -174,7 +174,7 @@ export const products: Product[] = [
       { label: "Manufacturer", value: "M/S. Kulswamini Enterprises" },
     ],
     applications: ["Process storage", "Intermediate holding", "Plant utilities"],
-    image: "/images/products/img-4.png",
+    image: "/images/products/storage-tank-profile.png",
     featured: true,
   },
   {
@@ -195,7 +195,7 @@ export const products: Product[] = [
       { label: "Manufacturer", value: "M/S. Kulswamini Enterprises" },
     ],
     applications: ["Condensation circuits", "Process cooling/heating loops"],
-    image: "/images/products/img-4.png",
+    image: "/images/products/condenser-profile.png",
   },
   {
     slug: "ptfe-pfa-fep-lined-pipe",
@@ -241,7 +241,7 @@ export const products: Product[] = [
     ],
     applications: ["Process pipe networks", "Plant interconnects"],
     variants: ["Elbow", "Cross", "Flange", "Manway cover"],
-    image: "/images/products/img-6.png",
+    image: "/images/products/lined-piping-fittings.png",
   },
   {
     slug: "industrial-valves",
@@ -265,7 +265,7 @@ export const products: Product[] = [
       "Plant utility systems",
     ],
     variants: ["Gate valves", "Globe valves", "Safety / relief valves"],
-    image: "/images/products/img-2.png",
+    image: "/images/products/industrial-valves-profile.png",
     featured: true,
   },
   {
@@ -283,7 +283,7 @@ export const products: Product[] = [
     ],
     specifications: [{ label: "Category", value: "Gaskets and sealing accessories" }],
     applications: ["Flanged joints", "Maintenance and overhaul", "Process equipment sealing"],
-    image: "/images/products/img-2.png",
+    image: "/images/products/gaskets-profile.png",
   },
   {
     slug: "single-spring-mechanical-seal",
@@ -302,7 +302,7 @@ export const products: Product[] = [
       { label: "Types", value: "Single-spring / multi-spring designs" },
     ],
     applications: ["Pumps", "Reactors", "Industrial plant equipment", "Marine applications"],
-    image: "/images/products/img-3.png",
+    image: "/images/products/single-multi-spring-seals.png",
     featured: true,
   },
   {
@@ -322,7 +322,7 @@ export const products: Product[] = [
       { label: "Types", value: "Cartridge seals / metallic bellows seals" },
     ],
     applications: ["Process pumps", "Reactors", "Plant rotating equipment"],
-    image: "/images/products/img-3.png",
+    image: "/images/products/cartridge-bellows-seals.png",
   },
   {
     slug: "nord-geared-motors",
@@ -347,7 +347,7 @@ export const products: Product[] = [
       "Reactor drives",
       "Industrial process equipment",
     ],
-    image: "/images/products/img-7.png",
+    image: "/images/products/nord-geared-drive.png",
     featured: true,
   },
   {
@@ -368,7 +368,7 @@ export const products: Product[] = [
       { label: "Scope", value: "Customized drive system supply" },
     ],
     applications: ["Process plants", "Pumping systems", "Reactor agitation drives"],
-    image: "/images/products/img-7.png",
+    image: "/images/products/nord-geared-drive.png",
   },
 ];
 

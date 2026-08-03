@@ -3,6 +3,15 @@ import { PageHero } from "@/components/PageHero";
 import { InquiryForm } from "@/components/InquiryForm";
 import { company } from "@/data/company";
 
+const mapsSearchUrl = (address: string) =>
+  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+
+const mapsDirectionsUrl = (address: string) =>
+  `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
+
+const mapsEmbedUrl = (address: string) =>
+  `https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`;
+
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
@@ -79,6 +88,15 @@ export default function ContactPage() {
                     <p className="mt-2 text-sm leading-relaxed text-gray-600">
                       {loc.address}
                     </p>
+                    <a
+                      href={mapsSearchUrl(loc.address)}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-orange-700 transition-colors hover:text-orange-900"
+                    >
+                      View on Google Maps
+                      <span aria-hidden>↗</span>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -101,6 +119,67 @@ export default function ContactPage() {
             <div className="mt-7">
               <InquiryForm />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad border-y border-gray-200 bg-white">
+        <div className="container-site">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow">Find us</p>
+            <div className="accent-bar mx-auto mt-3" />
+            <h2 className="mt-4 font-display text-3xl font-semibold text-gray-950 sm:text-4xl">
+              Explore our locations
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-gray-600 sm:text-base">
+              Open an address in Google Maps or request directions from your current location.
+            </p>
+          </div>
+
+          <div className="mt-9 grid gap-6 lg:grid-cols-3">
+            {company.locations.map((loc) => (
+              <article
+                key={loc.label}
+                className="group overflow-hidden rounded-2xl border border-gray-200 bg-[#f8f7f3] shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-lift"
+              >
+                <div className="relative h-56 overflow-hidden border-b border-gray-200 bg-gray-100">
+                  <iframe
+                    src={mapsEmbedUrl(loc.address)}
+                    title={`${loc.label} location map`}
+                    className="h-full w-full border-0 grayscale-[15%] transition duration-500 group-hover:grayscale-0"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-display text-xl font-semibold text-gray-950">
+                    {loc.label}
+                  </h3>
+                  <p className="mt-2 min-h-[4.5rem] text-sm leading-relaxed text-gray-600">
+                    {loc.address}
+                  </p>
+                  <div className="mt-5 grid gap-2 xs:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                    <a
+                      href={mapsSearchUrl(loc.address)}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn btn-secondary btn-sm"
+                    >
+                      View map
+                    </a>
+                    <a
+                      href={mapsDirectionsUrl(loc.address)}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn btn-primary btn-sm"
+                    >
+                      Get directions
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
