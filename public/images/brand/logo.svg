@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" role="img" aria-label="Sai Vision Engineering">
+  <defs>
+    <linearGradient id="ring" x1="10" y1="10" x2="110" y2="110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD000"/>
+      <stop offset="0.5" stop-color="#FFB020"/>
+      <stop offset="1" stop-color="#FF7A18"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="58" fill="#24180c"/>
+  <g fill="url(#ring)">
+    <path d="M60 8l6 14-6 4-6-4 6-14zm0 90l-6-14 6-4 6 4-6 14zM8 60l14-6 4 6-4 6-14-6zm90 0l-14 6-4-6 4-6 14 6z"/>
+    <path d="M24.7 24.7l14.5 4.2-1.4 7.2-7.2 1.4-5.9-12.8zm70.6 70.6l-14.5-4.2 1.4-7.2 7.2-1.4 5.9 12.8zM24.7 95.3l5.9-12.8 7.2 1.4 1.4 7.2-14.5 4.2zm70.6-70.6l-5.9 12.8-7.2-1.4-1.4-7.2 14.5-4.2z"/>
+  </g>
+  <circle cx="60" cy="60" r="34" fill="#fffef8"/>
+  <text x="60" y="72" text-anchor="middle" font-family="Georgia, serif" font-size="36" font-weight="700" fill="#e11d48" letter-spacing="-1">SV</text>
+</svg>
