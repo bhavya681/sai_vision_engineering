@@ -85,26 +85,26 @@ export default async function ProductDetailPage({ params }: Props) {
 
       <section className="bg-white pb-12 pt-24 xs:pb-14 sm:pb-16 sm:pt-28 md:pb-20 md:pt-32">
         <div className="container-site">
-          <nav className="mb-6 text-xs text-ink-800 sm:mb-8 sm:text-sm" aria-label="Breadcrumb">
+          <nav className="mb-6 text-xs text-gray-700 sm:mb-8 sm:text-sm" aria-label="Breadcrumb">
             <ol className="flex flex-wrap items-center gap-2">
               <li>
-                <Link href="/products" className="hover:text-flame-700">
+                <Link href="/products" className="hover:text-orange-700">
                   Products
                 </Link>
               </li>
               <li aria-hidden>/</li>
               <li>
-                <Link href={`/products/${categorySlug}`} className="hover:text-flame-700">
+                <Link href={`/products/${categorySlug}`} className="hover:text-orange-700">
                   {category?.name}
                 </Link>
               </li>
               <li aria-hidden>/</li>
-              <li className="text-ink-950">{product.name}</li>
+              <li className="text-gray-900">{product.name}</li>
             </ol>
           </nav>
 
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
-            <div className="relative aspect-[5/4] overflow-hidden rounded-md border border-sun-500/25 bg-mist-100">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-md border border-gray-200 bg-gray-50">
               <Image
                 src={product.image}
                 alt={product.name}
@@ -118,10 +118,10 @@ export default async function ProductDetailPage({ params }: Props) {
 
             <div>
               <p className="eyebrow">{category?.name}</p>
-              <h1 className="mt-3 font-display text-[1.85rem] font-semibold tracking-tight text-ink-950 xs:text-4xl sm:text-5xl">
+              <h1 className="mt-3 font-display text-[1.85rem] font-semibold tracking-tight text-gray-900 xs:text-4xl sm:text-5xl">
                 {product.name}
               </h1>
-              <p className="mt-4 text-sm leading-relaxed text-ink-800 sm:mt-5 sm:text-base md:text-lg">
+              <p className="mt-4 text-sm leading-relaxed text-gray-700 sm:mt-5 sm:text-base md:text-lg">
                 {product.description}
               </p>
 
@@ -139,14 +139,14 @@ export default async function ProductDetailPage({ params }: Props) {
 
               {product.variants?.length ? (
                 <div className="mt-8">
-                  <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-ink-800">
+                  <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-gray-700">
                     Available variants
                   </h2>
                   <ul className="mt-3 flex flex-wrap gap-2">
                     {product.variants.map((v) => (
                       <li
                         key={v}
-                        className="rounded-md border border-sun-500/30 bg-sun-50 px-3 py-1.5 text-sm font-medium text-ink-900"
+                        className="rounded-md border border-orange-200 bg-orange-50 px-3 py-1.5 text-sm font-medium text-gray-900"
                       >
                         {v}
                       </li>
@@ -159,33 +159,33 @@ export default async function ProductDetailPage({ params }: Props) {
 
           <div className="mt-14 grid gap-8 lg:grid-cols-3">
             <div>
-              <h2 className="font-display text-2xl font-semibold text-ink-950">Features</h2>
-              <ul className="mt-4 space-y-2 text-sm text-ink-800">
+              <h2 className="font-display text-2xl font-semibold text-gray-900">Features</h2>
+              <ul className="mt-4 space-y-2 text-sm text-gray-700">
                 {product.features.map((f) => (
                   <li key={f} className="flex gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-flame-600" aria-hidden />
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-600" aria-hidden />
                     {f}
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h2 className="font-display text-2xl font-semibold text-ink-950">Specifications</h2>
+              <h2 className="font-display text-2xl font-semibold text-gray-900">Specifications</h2>
               <dl className="mt-4 space-y-3 text-sm">
                 {product.specifications.map((spec) => (
-                  <div key={spec.label} className="border-b border-sun-500/25 pb-3">
-                    <dt className="font-semibold text-ink-950">{spec.label}</dt>
-                    <dd className="mt-1 text-ink-800">{spec.value}</dd>
+                  <div key={spec.label} className="border-b border-gray-200 pb-3">
+                    <dt className="font-semibold text-gray-900">{spec.label}</dt>
+                    <dd className="mt-1 text-gray-700">{spec.value}</dd>
                   </div>
                 ))}
               </dl>
             </div>
             <div>
-              <h2 className="font-display text-2xl font-semibold text-ink-950">Applications</h2>
-              <ul className="mt-4 space-y-2 text-sm text-ink-800">
+              <h2 className="font-display text-2xl font-semibold text-gray-900">Applications</h2>
+              <ul className="mt-4 space-y-2 text-sm text-gray-700">
                 {product.applications.map((a) => (
                   <li key={a} className="flex gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-flame-600" aria-hidden />
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-600" aria-hidden />
                     {a}
                   </li>
                 ))}
@@ -196,9 +196,9 @@ export default async function ProductDetailPage({ params }: Props) {
       </section>
 
       {related.length ? (
-        <section className="section-pad bg-mist-100">
+        <section className="section-pad bg-gray-50">
           <div className="container-site">
-            <h2 className="font-display text-3xl font-semibold text-ink-950">Related products</h2>
+            <h2 className="font-display text-3xl font-semibold text-gray-900">Related products</h2>
             <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {related.map((item) => (
                 <ProductCard key={item.slug} product={item} />

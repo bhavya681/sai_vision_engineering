@@ -24,7 +24,7 @@ export default function AboutPage() {
       />
 
       <section className="section-pad">
-        <div className="container-site grid gap-12 lg:grid-cols-2">
+        <div className="container-site grid gap-10 lg:grid-cols-2 lg:gap-14">
           <div className="prose-industrial space-y-4">
             <SectionHeading eyebrow="Overview" title="Who we are" />
             {company.overview.map((para) => (
@@ -33,12 +33,12 @@ export default function AboutPage() {
             <div className="pt-2">
               <IsoBadge />
             </div>
-            <p className="text-sm font-medium text-ink-800">
+            <p className="text-sm font-medium text-gray-700">
               Operating presence: {company.regions.join(" · ")}
             </p>
             <a
               href={`https://${company.websiteDisplay}`}
-              className="inline-flex text-sm font-semibold text-flame-700 hover:underline"
+              className="inline-flex text-sm font-semibold text-orange-700 hover:underline"
               target="_blank"
               rel="noreferrer"
             >
@@ -46,7 +46,7 @@ export default function AboutPage() {
             </a>
           </div>
           <div className="space-y-4">
-            <div className="overflow-hidden rounded-md border border-sun-500/20 bg-white p-4 shadow-soft">
+            <div className="overflow-hidden rounded-lg border border-gray-200 bg-white p-4 shadow-soft">
               <Image
                 src={company.brand.lockup}
                 alt="Sai Vision Engineering logo and ISO 9001:2015 certification"
@@ -55,7 +55,7 @@ export default function AboutPage() {
                 className="h-auto w-full object-contain"
               />
             </div>
-            <div className="relative min-h-[220px] overflow-hidden rounded-md bg-ink-900 sm:min-h-[260px]">
+            <div className="relative min-h-[200px] overflow-hidden rounded-lg bg-gray-900 sm:min-h-[260px]">
               <Image
                 src="/images/products/img-4.png"
                 alt="Process vessels and condensers"
@@ -69,17 +69,20 @@ export default function AboutPage() {
       </section>
 
       <section className="section-pad bg-white">
-        <div className="container-site grid gap-6 lg:grid-cols-2">
-          <div className="rounded-md bg-warm-panel p-6 text-white xs:p-8 sm:p-10">
+        <div className="container-site grid gap-5 lg:grid-cols-2 lg:gap-6">
+          <div
+            className="rounded-lg p-5 text-white xs:p-7 sm:p-8"
+            style={{ background: "linear-gradient(160deg, #111111 0%, #1c1210 50%, #2a1810 100%)" }}
+          >
             <p className="eyebrow eyebrow-on-dark">Vision</p>
-            <p className="mt-4 font-display text-2xl leading-snug text-white sm:text-3xl">
-              “{company.vision}”
+            <p className="mt-4 font-display text-xl leading-snug text-white sm:text-2xl md:text-3xl">
+              &ldquo;{company.vision}&rdquo;
             </p>
           </div>
-          <div className="rounded-md border border-sun-500/20 bg-sun-50 p-6 xs:p-8 sm:p-10">
+          <div className="rounded-lg border border-orange-200 bg-orange-50 p-5 xs:p-7 sm:p-8">
             <p className="eyebrow">Mission</p>
-            <p className="mt-4 font-display text-2xl leading-snug text-ink-950 sm:text-3xl">
-              “{company.mission}”
+            <p className="mt-4 font-display text-xl leading-snug text-gray-900 sm:text-2xl md:text-3xl">
+              &ldquo;{company.mission}&rdquo;
             </p>
           </div>
         </div>
@@ -95,15 +98,15 @@ export default function AboutPage() {
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {capabilities.map((item) => (
               <div key={item.title} className="surface-card p-5 sm:p-6">
-                <h3 className="font-display text-xl font-semibold text-ink-950">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-800">{item.description}</p>
+                <h3 className="font-display text-xl font-semibold text-gray-900">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-600">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section-pad bg-mist-100">
+      <section className="section-pad bg-gray-50">
         <div className="container-site">
           <SectionHeading
             eyebrow="Why customers choose us"
@@ -111,7 +114,7 @@ export default function AboutPage() {
           />
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {company.whyChooseUs.map((item) => (
-              <div key={item} className="rounded-md border border-sun-500/15 bg-white px-4 py-3 text-sm font-medium text-ink-900 sm:px-5 sm:py-4">
+              <div key={item} className="rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-800 sm:px-5 sm:py-4">
                 {item}
               </div>
             ))}
@@ -128,8 +131,8 @@ export default function AboutPage() {
           <div className="grid gap-5 lg:grid-cols-3">
             {company.partnerships.map((p) => (
               <article key={p.name} className="surface-card p-5 sm:p-6">
-                <h3 className="font-display text-2xl font-semibold text-ink-950">{p.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-800">{p.detail}</p>
+                <h3 className="font-display text-2xl font-semibold text-gray-900">{p.name}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-gray-600">{p.detail}</p>
               </article>
             ))}
           </div>

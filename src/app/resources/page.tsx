@@ -39,16 +39,16 @@ export default function ResourcesPage() {
             {downloads.map((doc) => (
               <article
                 key={doc.href}
-                className="flex flex-col justify-between gap-5 rounded-md border border-sun-500/30 bg-white p-5 shadow-soft xs:p-6 sm:flex-row sm:items-center"
+                className="flex flex-col justify-between gap-5 rounded-md border border-gray-200 bg-white p-5 shadow-soft xs:p-6 sm:flex-row sm:items-center"
               >
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-flame-700">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-orange-700">
                     {doc.type}
                   </p>
-                  <h3 className="mt-2 font-display text-2xl font-semibold text-ink-950">
+                  <h3 className="mt-2 font-display text-2xl font-semibold text-gray-900">
                     {doc.name}
                   </h3>
-                  <p className="mt-2 max-w-2xl text-sm text-ink-800">{doc.description}</p>
+                  <p className="mt-2 max-w-2xl text-sm text-gray-700">{doc.description}</p>
                 </div>
                 <a href={doc.href} download className="btn btn-primary shrink-0">
                   Download PDF

@@ -4,10 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState, useCallback } from "react";
 import { usePathname } from "next/navigation";
+import { categories } from "@/data/products";
 
 const NAV_LINKS = [
   { href: "/about", label: "About" },
-  { href: "/products", label: "Products" },
+  { href: "/products", label: "Products", hasDropdown: true },
   { href: "/industries", label: "Industries" },
   { href: "/capabilities", label: "Capabilities" },
   { href: "/resources", label: "Resources" },
@@ -17,6 +18,7 @@ const NAV_LINKS = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
   const pathname = usePathname();
 
   const isHome = pathname === "/";
@@ -37,9 +39,10 @@ export function Header() {
     };
   }, [open]);
 
-  // Close drawer on route change
+  // Close drawer and dropdowns on route change
   useEffect(() => {
     setOpen(false);
+    setProductsOpen(false);
   }, [pathname]);
 
   const closeMenu = useCallback(() => setOpen(false), []);
@@ -51,6 +54,20 @@ export function Header() {
 
   // Transparent: only on home page before scroll
   const transparent = isHome && !scrolled && !open;
+
+  // Global click listener to close dropdown
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (productsOpen) {
+        const target = e.target as HTMLElement;
+        if (!target.closest(".products-dropdown-container")) {
+          setProductsOpen(false);
+        }
+      }
+    };
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, [productsOpen]);
 
   return (
     <>
@@ -74,7 +91,7 @@ export function Header() {
           {/* ── LOGO ── */}
           <Link
             href="/"
-            className="group flex shrink-0 items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 rounded-sm"
+            className="group flex shrink-0 items-center gap-2.5 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2"
             aria-label="Sai Vision Engineering — Home"
           >
             <div
@@ -119,12 +136,78 @@ export function Header() {
           >
             {NAV_LINKS.map((item) => {
               const active = isActive(item.href);
+
+              if (item.hasDropdown) {
+                return (
+                  <div key={item.href} className="products-dropdown-container relative">
+                    <button
+                      type="button"
+                      aria-expanded={productsOpen}
+                      onClick={() => setProductsOpen(!productsOpen)}
+                      className={`group relative flex items-center gap-1 rounded-md px-3 py-2 text-sm font-semibold tracking-wide transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-1 xl:px-3.5 ${
+                        active
+                          ? transparent
+                            ? "text-orange-300"
+                            : "text-orange-700"
+                          : transparent
+                            ? "text-white/88 hover:text-white"
+                            : "text-gray-600 hover:text-gray-900"
+                      }`}
+                    >
+                      {item.label}
+                      <svg
+                        className={`h-4 w-4 transition-transform duration-200 ${productsOpen ? "rotate-180" : ""}`}
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      {/* Active indicator */}
+                      <span
+                        className={`absolute bottom-0.5 left-3 right-3 h-[2px] origin-left rounded-full bg-orange-500 transition-transform duration-200 ${
+                          active ? "scale-x-100" : "scale-x-0"
+                        }`}
+                      />
+                    </button>
+
+                    {/* Dropdown Menu */}
+                    {productsOpen && (
+                      <div className="absolute left-1/2 mt-2 w-72 -translate-x-1/2 animate-slide-down rounded-xl border border-gray-100 bg-white p-2 shadow-xl ring-1 ring-black/5">
+                        <Link
+                          href="/products"
+                          className="block rounded-lg px-4 py-2 text-sm font-bold text-gray-900 hover:bg-orange-50 hover:text-orange-700"
+                        >
+                          View All Products
+                        </Link>
+                        <div className="my-1 border-t border-gray-100" />
+                        <ul className="space-y-1">
+                          {categories.map((cat) => (
+                            <li key={cat.slug}>
+                              <Link
+                                href={`/products/${cat.slug}`}
+                                className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                              >
+                                {cat.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
               return (
                 <Link
                   key={item.href}
                   href={item.href}
                   aria-current={active ? "page" : undefined}
-                  className={`relative rounded-md px-3 py-2 text-sm font-semibold tracking-wide transition-colors duration-200 xl:px-3.5 ${
+                  className={`group relative rounded-md px-3 py-2 text-sm font-semibold tracking-wide transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-1 xl:px-3.5 ${
                     active
                       ? transparent
                         ? "text-orange-300"
@@ -132,7 +215,7 @@ export function Header() {
                       : transparent
                         ? "text-white/88 hover:text-white"
                         : "text-gray-600 hover:text-gray-900"
-                  } group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-1 focus-visible:rounded`}
+                  }`}
                 >
                   {item.label}
                   {/* Active / hover indicator */}
@@ -199,17 +282,17 @@ export function Header() {
               <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
               <div className="flex w-5 flex-col gap-[5px]">
                 <span
-                  className={`h-0.5 w-full rounded-full bg-current transition-all duration-300 origin-center ${
+                  className={`h-0.5 w-full origin-center rounded-full bg-current transition-all duration-300 ${
                     open ? "translate-y-[7px] rotate-45" : ""
                   }`}
                 />
                 <span
                   className={`h-0.5 w-full rounded-full bg-current transition-all duration-300 ${
-                    open ? "opacity-0 scale-x-0" : ""
+                    open ? "scale-x-0 opacity-0" : ""
                   }`}
                 />
                 <span
-                  className={`h-0.5 w-full rounded-full bg-current transition-all duration-300 origin-center ${
+                  className={`h-0.5 w-full origin-center rounded-full bg-current transition-all duration-300 ${
                     open ? "-translate-y-[7px] -rotate-45" : ""
                   }`}
                 />
@@ -226,7 +309,7 @@ export function Header() {
         aria-hidden="true"
         onClick={closeMenu}
         className={`fixed inset-0 z-40 bg-black/55 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
-          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         }`}
       />
 
@@ -302,6 +385,39 @@ export function Header() {
           <ul className="space-y-1" role="list">
             {NAV_LINKS.map((item) => {
               const active = isActive(item.href);
+
+              if (item.hasDropdown) {
+                return (
+                  <li key={item.href} className="space-y-1">
+                    <Link
+                      href={item.href}
+                      onClick={closeMenu}
+                      aria-current={active ? "page" : undefined}
+                      className={`flex items-center justify-between rounded-lg px-4 py-3.5 text-[0.9375rem] font-semibold transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-orange-500 ${
+                        active
+                          ? "border-l-[3px] border-orange-600 bg-orange-50 pl-[calc(1rem-3px)] text-orange-700"
+                          : "text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                    <ul className="pl-6 pr-2 space-y-1">
+                      {categories.map((cat) => (
+                        <li key={cat.slug}>
+                          <Link
+                            href={`/products/${cat.slug}`}
+                            onClick={closeMenu}
+                            className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                          >
+                            {cat.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                );
+              }
+
               return (
                 <li key={item.href}>
                   <Link
@@ -338,7 +454,7 @@ export function Header() {
         </nav>
 
         {/* Drawer CTAs */}
-        <div className="shrink-0 border-t border-gray-100 px-5 pb-6 pt-4 space-y-2.5">
+        <div className="shrink-0 space-y-2.5 border-t border-gray-100 px-5 pb-6 pt-4">
           <Link
             href="/request-quote"
             onClick={closeMenu}
@@ -362,7 +478,7 @@ export function Header() {
           <Link
             href="/contact"
             onClick={closeMenu}
-            className="flex w-full items-center justify-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-4 py-3 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-100 hover:border-gray-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2"
+            className="flex w-full items-center justify-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-4 py-3 text-sm font-semibold text-gray-700 transition-colors hover:border-gray-300 hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2"
           >
             Contact Us
           </Link>

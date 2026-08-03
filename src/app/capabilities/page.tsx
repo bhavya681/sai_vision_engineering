@@ -29,7 +29,7 @@ export default function CapabilitiesPage() {
             title="ISO 9001:2015 Certified"
             description="Quality management certification as shown on Sai Vision Engineering brand materials."
           />
-          <div className="flex flex-col items-start gap-6 rounded-lg border border-sun-500/25 bg-sun-50 p-6 sm:flex-row sm:items-center sm:p-8">
+          <div className="flex flex-col items-start gap-6 rounded-lg border border-orange-200/50 bg-orange-50 p-6 sm:flex-row sm:items-center sm:p-8">
             <Image
               src={company.brand.iso}
               alt="ISO 9001:2015 Certified seal"
@@ -39,7 +39,7 @@ export default function CapabilitiesPage() {
             />
             <div>
               <IsoBadge />
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-800">
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-700">
                 This certification supports our commitment to consistent quality processes across
                 products, services, and customer delivery.
               </p>
@@ -58,8 +58,8 @@ export default function CapabilitiesPage() {
           <div className="grid gap-5 md:grid-cols-2">
             {capabilities.map((item) => (
               <article key={item.title} className="surface-card p-5 sm:p-6">
-                <h3 className="font-display text-2xl font-semibold text-ink-950">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-800">{item.description}</p>
+                <h3 className="font-display text-2xl font-semibold text-gray-900">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-gray-600">{item.description}</p>
               </article>
             ))}
           </div>
@@ -96,8 +96,8 @@ export default function CapabilitiesPage() {
           <div className="grid gap-4 md:grid-cols-2">
             {services.map((service) => (
               <div key={service.title} className="surface-card p-4 sm:p-5">
-                <h3 className="font-display text-lg font-semibold text-ink-950 sm:text-xl">{service.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-800">{service.description}</p>
+                <h3 className="font-display text-lg font-semibold text-gray-900 sm:text-xl">{service.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-600">{service.description}</p>
               </div>
             ))}
           </div>

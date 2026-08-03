@@ -46,12 +46,12 @@ export default async function IndustryDetailPage({ params }: Props) {
       <section className="section-pad">
         <div className="container-site grid gap-10 lg:grid-cols-2">
           <div>
-            <h2 className="font-display text-3xl font-semibold text-ink-950">Use cases</h2>
+            <h2 className="font-display text-3xl font-semibold text-gray-900">Use cases</h2>
             <ul className="mt-5 space-y-3">
               {industry.useCases.map((item) => (
                 <li
                   key={item}
-                  className="rounded-md border border-sun-500/30 bg-white px-4 py-3 text-sm font-medium text-ink-800"
+                  className="rounded-md border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-800"
                 >
                   {item}
                 </li>
@@ -59,7 +59,7 @@ export default async function IndustryDetailPage({ params }: Props) {
             </ul>
           </div>
           <div>
-            <h2 className="font-display text-3xl font-semibold text-ink-950">
+            <h2 className="font-display text-3xl font-semibold text-gray-900">
               Relevant product categories
             </h2>
             <div className="mt-5 space-y-3">
@@ -70,8 +70,8 @@ export default async function IndustryDetailPage({ params }: Props) {
                     href={`/products/${category.slug}`}
                     className="surface-card block p-4 sm:p-5"
                   >
-                    <h3 className="font-display text-xl font-semibold text-ink-950">{category.name}</h3>
-                    <p className="mt-2 text-sm text-ink-800">{category.shortDescription}</p>
+                    <h3 className="font-display text-xl font-semibold text-gray-900">{category.name}</h3>
+                    <p className="mt-2 text-sm text-gray-700">{category.shortDescription}</p>
                   </Link>
                 ) : null,
               )}

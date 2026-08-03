@@ -27,22 +27,22 @@ export default async function RequestQuotePage({ searchParams }: Props) {
       <section className="section-pad">
         <div className="container-site grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <h2 className="font-display text-3xl font-semibold text-ink-950">What happens next</h2>
-            <ol className="mt-5 space-y-4 text-sm text-ink-800">
+            <h2 className="font-display text-3xl font-semibold text-gray-900">What happens next</h2>
+            <ol className="mt-5 space-y-4 text-sm text-gray-700">
               <li>1. Submit your requirement with contact details.</li>
               <li>2. Our team reviews product/category and scope.</li>
               <li>3. We respond with clarification questions or a quotation path.</li>
             </ol>
-            <div className="mt-8 rounded-md border border-sun-500/20 bg-sun-50 p-5 text-sm">
-              <p className="font-medium text-ink-950">Prefer direct contact?</p>
+            <div className="mt-8 rounded-md border border-orange-200/50 bg-orange-50 p-5 text-sm">
+              <p className="font-medium text-gray-900">Prefer direct contact?</p>
               <a
-                className="mt-2 block text-flame-700 hover:underline"
+                className="mt-2 block text-orange-700 hover:underline"
                 href={`tel:+91${company.contacts.phones[0].number}`}
               >
                 +91 {company.contacts.phones[0].number}
               </a>
               <a
-                className="mt-1 block break-all text-flame-700 hover:underline"
+                className="mt-1 block break-all text-orange-700 hover:underline"
                 href={`mailto:${company.contacts.emails[0]}`}
               >
                 {company.contacts.emails[0]}
@@ -50,7 +50,7 @@ export default async function RequestQuotePage({ searchParams }: Props) {
             </div>
           </div>
 
-          <div className="rounded-md border border-sun-500/20 bg-white p-5 shadow-soft xs:p-6 sm:p-8 lg:col-span-8">
+          <div className="rounded-md border border-orange-200/50 bg-white p-5 shadow-soft xs:p-6 sm:p-8 lg:col-span-8">
             <InquiryForm defaultProduct={product ?? ""} />
           </div>
         </div>

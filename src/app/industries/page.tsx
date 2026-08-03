@@ -30,10 +30,10 @@ export default function IndustriesPage() {
               className="surface-card group p-5 sm:p-6 md:p-7"
             >
               <p className="eyebrow">Industry</p>
-              <h2 className="mt-3 font-display text-2xl font-semibold text-ink-950 group-hover:text-flame-700 sm:text-3xl">
+              <h2 className="mt-3 font-display text-2xl font-semibold text-gray-900 group-hover:text-orange-700 sm:text-3xl">
                 {industry.name}
               </h2>
-              <p className="mt-4 text-sm leading-relaxed text-ink-800">
+              <p className="mt-4 text-sm leading-relaxed text-gray-700">
                 {industry.shortDescription}
               </p>
               <span className="mt-6 inline-flex text-sm font-bold text-[#9a3412]">
