@@ -22,7 +22,7 @@ export default function HomePage() {
       <section className="relative min-h-[100svh] overflow-hidden text-white">
         {/* Background photograph */}
         <Image
-          src="/images/brand/hero-bg.png"
+          src="/images/brand/image.png"
           alt="Industrial process equipment — vessels, piping, and valves"
           fill
           priority
