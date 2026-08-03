@@ -36,7 +36,7 @@ export default function HomePage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to right, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.75) 30%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.15) 80%, rgba(0,0,0,0.05) 100%)",
+              "linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.42) 30%, rgba(0,0,0,0.22) 55%, rgba(0,0,0,0.08) 80%, rgba(0,0,0,0.02) 100%)",
           }}
         />
         {/* Top-bottom vignette for depth */}
