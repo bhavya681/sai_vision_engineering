@@ -21,9 +21,9 @@ export const company = {
   ],
   regions: ["Maharashtra", "Gujarat", "Delhi", "Andhra Pradesh"],
   brand: {
-    logo: "/images/brand/logo.png",
+    logo: "/images/brand/logo-source.png",
     lockup: "/images/brand/lockup.png",
-    iso: "/images/brand/iso-9001.png",
+    iso: "/images/brand/iso-source.png",
   },
   partnerships: [
     {

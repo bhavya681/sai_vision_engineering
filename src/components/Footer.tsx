@@ -2,76 +2,93 @@ import Image from "next/image";
 import Link from "next/link";
 import { company } from "@/data/company";
 import { categories } from "@/data/products";
-import { industries } from "@/data/industries";
+
+const EXPLORE_LINKS = [
+  ["About", "/about"],
+  ["Products", "/products"],
+  ["Industries", "/industries"],
+  ["Capabilities", "/capabilities"],
+  ["Resources", "/resources"],
+  ["Contact", "/contact"],
+  ["Request a Quote", "/request-quote"],
+] as const;
 
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-sun-500/30 bg-ink-950 text-white">
-      <div className="h-1.5 w-full bg-sun-band-animated" />
-      <div className="container-site grid gap-10 py-12 sm:gap-12 sm:py-14 md:py-16 lg:grid-cols-12">
+    <footer className="border-t border-gray-800 bg-[#111111] text-white">
+      {/* Top brand accent stripe */}
+      <div className="h-[3px] w-full bg-sun-band" />
+
+      {/* Main footer content */}
+      <div className="container-site grid gap-10 py-14 lg:grid-cols-12 lg:gap-8 xl:gap-12">
+        {/* ── Brand column ── */}
         <div className="lg:col-span-4">
-          <Link href="/" className="inline-flex items-center gap-3">
-            <Image
-              src={company.brand.logo}
-              alt={`${company.name} logo`}
-              width={48}
-              height={48}
-              className="h-11 w-11 object-contain"
-            />
+          {/* Logo + wordmark */}
+          <Link href="/" className="inline-flex items-center gap-3 group" aria-label="Sai Vision Engineering — Home">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/20 transition-all duration-300 group-hover:bg-white/16">
+              <Image
+                src={company.brand.logo}
+                alt={`${company.name} logo`}
+                width={44}
+                height={44}
+                className="h-9 w-9 object-contain"
+              />
+            </span>
             <span>
-              <span className="block font-display text-lg font-semibold text-white sm:text-xl">
+              <span className="block font-display text-lg font-bold tracking-wide text-white sm:text-xl">
                 {company.name}
               </span>
-              <span className="mt-1 block text-[0.65rem] uppercase tracking-[0.16em] text-accent-on-dark sm:text-xs">
+              <span className="block text-[0.62rem] font-extrabold uppercase tracking-[0.18em] text-orange-400">
                 {company.tagline}
               </span>
             </span>
           </Link>
-          <p className="mt-5 max-w-sm text-sm leading-relaxed text-on-dark-muted">
+
+          {/* Description */}
+          <p className="mt-5 max-w-sm text-sm leading-relaxed text-gray-300">
             {company.summary}
           </p>
-          <div className="mt-5 flex items-center gap-3">
+
+          {/* ISO Badge */}
+          <div className="mt-6 inline-flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 px-4 py-3">
             <Image
               src={company.brand.iso}
               alt="ISO 9001:2015 Certified"
-              width={56}
-              height={56}
-              className="h-14 w-14 object-contain"
+              width={52}
+              height={52}
+              className="h-12 w-12 object-contain"
             />
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent-on-dark">
+              <p className="text-[0.6rem] font-extrabold uppercase tracking-[0.18em] text-orange-400">
                 Certified
               </p>
-              <p className="text-sm font-semibold text-white">ISO 9001:2015</p>
+              <p className="text-sm font-bold text-white">ISO 9001:2015</p>
+              <p className="text-[0.7rem] text-gray-400">Quality Management</p>
             </div>
           </div>
-          <p className="mt-4 text-xs text-on-dark-muted">
+
+          {/* Presence & GSTIN */}
+          <p className="mt-4 text-xs text-gray-400">
             Presence: {company.regions.join(" · ")}
           </p>
-          <p className="mt-2 text-xs text-on-dark-muted">GSTIN: {company.gstin}</p>
+          <p className="mt-1.5 text-xs text-gray-500">GSTIN: {company.gstin}</p>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 md:gap-10 lg:col-span-8">
+        {/* ── Navigation columns ── */}
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-8 lg:gap-6">
+          {/* Explore */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-accent-on-dark">
+            <h3 className="text-xs font-extrabold uppercase tracking-[0.2em] text-orange-400">
               Explore
             </h3>
-            <ul className="mt-4 space-y-2 text-sm text-on-dark-muted">
-              {[
-                ["About", "/about"],
-                ["Products", "/products"],
-                ["Industries", "/industries"],
-                ["Capabilities", "/capabilities"],
-                ["Resources", "/resources"],
-                ["Contact", "/contact"],
-                ["Request a Quote", "/request-quote"],
-              ].map(([label, href]) => (
+            <ul className="mt-4 space-y-2.5">
+              {EXPLORE_LINKS.map(([label, href]) => (
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-white transition-colors hover:text-[#ffcc66] focus-visible:text-[#ffcc66]"
+                    className="text-sm text-gray-300 transition-colors hover:text-white focus-visible:text-white focus-visible:outline-none focus-visible:underline"
                   >
                     {label}
                   </Link>
@@ -80,16 +97,17 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Products */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-accent-on-dark">
+            <h3 className="text-xs font-extrabold uppercase tracking-[0.2em] text-orange-400">
               Products
             </h3>
-            <ul className="mt-4 space-y-2 text-sm">
+            <ul className="mt-4 space-y-2.5">
               {categories.map((c) => (
                 <li key={c.slug}>
                   <Link
                     href={`/products/${c.slug}`}
-                    className="text-white transition-colors hover:text-[#ffcc66] focus-visible:text-[#ffcc66]"
+                    className="text-sm text-gray-300 transition-colors hover:text-white focus-visible:text-white focus-visible:outline-none focus-visible:underline"
                   >
                     {c.name}
                   </Link>
@@ -98,24 +116,27 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="sm:col-span-2 md:col-span-1">
-            <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-accent-on-dark">
+          {/* Contact */}
+          <div className="col-span-2 sm:col-span-1">
+            <h3 className="text-xs font-extrabold uppercase tracking-[0.2em] text-orange-400">
               Contact
             </h3>
-            <ul className="mt-4 space-y-3 text-sm">
-              <li>
-                <a
-                  href={`tel:+91${company.contacts.phones[0].number}`}
-                  className="text-white transition-colors hover:text-[#ffcc66] focus-visible:text-[#ffcc66]"
-                >
-                  {company.contacts.primaryName}: {company.contacts.phones[0].number}
-                </a>
-              </li>
+            <ul className="mt-4 space-y-3">
+              {company.contacts.phones.map((phone) => (
+                <li key={phone.number}>
+                  <a
+                    href={`tel:+91${phone.number}`}
+                    className="text-sm text-gray-300 transition-colors hover:text-white focus-visible:text-white focus-visible:outline-none"
+                  >
+                    {phone.label}: +91 {phone.number}
+                  </a>
+                </li>
+              ))}
               {company.contacts.emails.map((email) => (
                 <li key={email}>
                   <a
                     href={`mailto:${email}`}
-                    className="break-all text-white transition-colors hover:text-[#ffcc66] focus-visible:text-[#ffcc66]"
+                    className="break-all text-sm text-gray-300 transition-colors hover:text-white focus-visible:text-white focus-visible:outline-none"
                   >
                     {email}
                   </a>
@@ -124,36 +145,46 @@ export function Footer() {
               <li>
                 <a
                   href={`https://${company.websiteDisplay}`}
-                  className="text-white transition-colors hover:text-[#ffcc66] focus-visible:text-[#ffcc66]"
+                  className="text-sm text-gray-300 transition-colors hover:text-white focus-visible:text-white focus-visible:outline-none"
                   target="_blank"
                   rel="noreferrer"
                 >
                   {company.websiteDisplay}
                 </a>
               </li>
-              <li className="pt-2 text-on-dark-muted">
-                Industries: {industries.map((i) => i.name).join(" · ")}
+
+              {/* Partnerships */}
+              <li className="pt-2">
+                <p className="text-[0.65rem] font-extrabold uppercase tracking-[0.16em] text-orange-400">
+                  Partnerships
+                </p>
+                <p className="mt-1.5 text-xs leading-relaxed text-gray-400">
+                  GMM Pfaudler Authorised Contractor
+                  <br />
+                  NORD Drive Systems Prime Dealer
+                </p>
               </li>
             </ul>
           </div>
         </div>
       </div>
 
-      <div className="border-t border-white/20">
-        <div className="container-site flex flex-col gap-3 py-5 text-xs text-on-dark-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>
+      {/* Bottom bar */}
+      <div className="border-t border-gray-800">
+        <div className="container-site flex flex-col gap-3 py-5 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs text-gray-500">
             © {year} {company.name}. All rights reserved.
           </p>
-          <div className="flex flex-wrap gap-4 sm:gap-5">
+          <div className="flex flex-wrap gap-4 sm:gap-6">
             <Link
               href="/privacy"
-              className="text-white transition-colors hover:text-[#ffcc66] focus-visible:text-[#ffcc66]"
+              className="text-xs text-gray-400 transition-colors hover:text-white focus-visible:text-white focus-visible:outline-none focus-visible:underline"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="text-white transition-colors hover:text-[#ffcc66] focus-visible:text-[#ffcc66]"
+              className="text-xs text-gray-400 transition-colors hover:text-white focus-visible:text-white focus-visible:outline-none focus-visible:underline"
             >
               Terms of Use
             </Link>

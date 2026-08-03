@@ -12,100 +12,107 @@ const config: Config = {
         xs: "390px",
       },
       colors: {
+        /* ── Brand ink palette (dark tones) ── */
         ink: {
-          950: "#120c06",
-          900: "#1a1208",
-          800: "#2c1d0e",
-          700: "#3f2c18",
-          600: "#5c4428",
+          950: "#111111",
+          900: "#1c1c1c",
+          800: "#2d2d2d",
+          700: "#404040",
+          600: "#525252",
         },
-        sun: {
-          50: "#fffef5",
-          100: "#fff4cc",
-          200: "#ffe780",
-          300: "#ffd84d",
-          400: "#ffd000",
-          500: "#ffb020",
-          600: "#ff8f0a",
-          700: "#e06f00",
-          800: "#b45309",
+        /* ── Brand warm dark (hero/CTA panels) ── */
+        panel: {
+          950: "#111111",
+          900: "#1c1210",
+          800: "#2a1810",
+          700: "#3d2012",
         },
+        /* ── Orange / flame ── */
         flame: {
-          400: "#ff9440",
-          500: "#ff7a18",
-          600: "#f05d00",
+          400: "#fb923c",
+          500: "#f97316",
+          600: "#ea580c",
           700: "#c2410c",
+          800: "#9a3412",
+          900: "#7c2d12",
         },
-        brass: {
-          50: "#fffef5",
-          100: "#fff4cc",
-          200: "#ffe780",
-          300: "#ffd84d",
-          400: "#ffd000",
-          500: "#ffb020",
-          600: "#ff8f0a",
-          700: "#e06f00",
+        /* ── Amber ── */
+        sun: {
+          50:  "#fff7ed",
+          100: "#ffedd5",
+          200: "#fed7aa",
+          300: "#fdba74",
+          400: "#fb923c",
+          500: "#f97316",
+          600: "#ea580c",
+          700: "#c2410c",
+          800: "#9a3412",
         },
-        ember: {
-          500: "#e11d48",
-          600: "#be123c",
+        /* ── Neutral surfaces ── */
+        surface: {
+          50:  "#fafafa",
+          100: "#f5f5f5",
+          200: "#e5e5e5",
+          warm: "#f9f9f7",
+          soft: "#f5f5f0",
         },
+        /* ── Mist (soft warm tint) ── */
         mist: {
-          50: "#fffdf7",
-          100: "#fff8e7",
-          200: "#fdecc0",
+          50:  "#fafaf7",
+          100: "#f5f5ef",
+          200: "#ebebdf",
         },
       },
       fontFamily: {
         display: ["var(--font-display)", "Georgia", "serif"],
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        sans:    ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        soft: "0 18px 50px rgba(255, 122, 24, 0.14)",
-        lift: "0 18px 42px rgba(255, 122, 24, 0.22)",
-        glow: "0 0 0 4px rgba(255, 208, 0, 0.28)",
-        bright: "0 12px 36px rgba(255, 176, 32, 0.35)",
+        soft:  "0 4px 20px rgba(0, 0, 0, 0.07)",
+        lift:  "0 12px 40px rgba(0, 0, 0, 0.12)",
+        brand: "0 6px 24px rgba(234, 88, 12, 0.25)",
+        glow:  "0 0 0 4px rgba(249, 115, 22, 0.22)",
       },
       transitionTimingFunction: {
         smooth: "cubic-bezier(0.22, 1, 0.36, 1)",
       },
       backgroundImage: {
         "grid-faint":
-          "linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)",
+          "linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)",
         "hero-sheen":
-          "radial-gradient(ellipse 80% 55% at 78% 12%, rgba(255,208,0,0.42), transparent 55%), radial-gradient(ellipse 55% 45% at 12% 85%, rgba(255,122,24,0.34), transparent 60%)",
+          "radial-gradient(ellipse 75% 55% at 80% 10%, rgba(249,115,22,0.32), transparent 60%), radial-gradient(ellipse 50% 40% at 10% 90%, rgba(194,65,12,0.28), transparent 55%)",
         "sun-band":
-          "linear-gradient(135deg, #ffd000 0%, #ffb020 45%, #ff7a18 100%)",
+          "linear-gradient(90deg, #c2410c 0%, #ea580c 40%, #f97316 70%, #fbbf24 100%)",
         "warm-panel":
-          "linear-gradient(160deg, #1a1208 0%, #3a2714 48%, #5a3d22 100%)",
+          "linear-gradient(160deg, #111111 0%, #1c1210 50%, #2a1810 100%)",
       },
       keyframes: {
         fadeUp: {
-          from: { opacity: "0", transform: "translateY(18px)" },
-          to: { opacity: "1", transform: "translateY(0)" },
+          from: { opacity: "0", transform: "translateY(20px)" },
+          to:   { opacity: "1", transform: "translateY(0)" },
         },
         fadeIn: {
           from: { opacity: "0" },
-          to: { opacity: "1" },
+          to:   { opacity: "1" },
         },
         slideDown: {
-          from: { opacity: "0", transform: "translateY(-8px)" },
-          to: { opacity: "1", transform: "translateY(0)" },
+          from: { opacity: "0", transform: "translateY(-10px)" },
+          to:   { opacity: "1", transform: "translateY(0)" },
         },
         marquee: {
           from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-50%)" },
+          to:   { transform: "translateX(-50%)" },
         },
         floatSoft: {
           "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-8px)" },
+          "50%":       { transform: "translateY(-7px)" },
         },
       },
       animation: {
-        "fade-up": "fadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both",
-        "fade-in": "fadeIn 0.5s ease both",
+        "fade-up":    "fadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "fade-in":    "fadeIn 0.5s ease both",
         "slide-down": "slideDown 0.35s cubic-bezier(0.22, 1, 0.36, 1) both",
-        marquee: "marquee 42s linear infinite",
+        marquee:      "marquee 44s linear infinite",
         "float-soft": "floatSoft 5.5s ease-in-out infinite",
       },
     },
