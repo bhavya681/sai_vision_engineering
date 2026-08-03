@@ -125,10 +125,10 @@ export function Header() {
           <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary navigation">
             {NAV_LINKS.map((item) => {
               const active = isActive(item.href);
-              const common = `group relative flex items-center gap-1 rounded-xl px-3.5 py-2.5 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 ${
+              const common = `nav-item group relative flex items-center gap-1 rounded-xl px-3.5 py-2.5 text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 ${
                 active
-                  ? "bg-[#fff3e8] text-gray-950 shadow-sm ring-1 ring-orange-200/70"
-                  : "text-gray-600 hover:bg-gray-100 hover:text-gray-950"
+                  ? "is-active text-gray-950"
+                  : "text-gray-600 hover:bg-orange-50/70 hover:text-gray-950"
               }`;
 
               if (item.hasDropdown) {
@@ -154,10 +154,12 @@ export function Header() {
                     >
                       <Link
                         href="/products"
-                        className="group flex items-center justify-between rounded-xl bg-gradient-to-r from-[#221611] to-[#3a2115] px-4 py-3 text-sm font-bold text-white transition-transform duration-200 hover:-translate-y-0.5"
+                        className="group flex items-center justify-between rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm font-bold text-gray-950 transition-all duration-200 hover:-translate-y-0.5 hover:border-orange-200 hover:bg-white hover:shadow-sm"
                       >
                         Explore all products
-                        <Arrow />
+                        <span className="text-orange-500">
+                          <Arrow />
+                        </span>
                       </Link>
                       <ul className="mt-2 grid gap-1">
                         {categories.map((category) => (
@@ -253,9 +255,9 @@ export function Header() {
           <ul className="space-y-1">
             {NAV_LINKS.map((item) => {
               const active = isActive(item.href);
-              const linkStyle = `flex min-h-12 items-center justify-between rounded-xl px-4 py-3 text-[0.95rem] font-semibold transition-all duration-200 ${
+              const linkStyle = `mobile-nav-item flex min-h-12 items-center justify-between rounded-xl px-4 py-3 text-[0.95rem] font-semibold transition-all duration-300 ${
                 active
-                  ? "bg-[#fff3e8] text-gray-950 ring-1 ring-orange-200/70"
+                  ? "is-active text-gray-950"
                   : "text-gray-700 hover:translate-x-0.5 hover:bg-gray-100 hover:text-gray-950"
               }`;
 

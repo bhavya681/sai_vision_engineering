@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ReactNode } from "react";
 
 type PageHeroProps = {
@@ -9,12 +10,19 @@ type PageHeroProps = {
 
 export function PageHero({ eyebrow, title, description, children }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-warm-panel pb-14 pt-28 text-white xs:pb-16 sm:pb-20 sm:pt-32 md:pb-24 md:pt-36">
-      {/* Decorative overlays */}
-      <div className="pointer-events-none absolute inset-0 bg-hero-sheen" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/30" />
+    <section className="relative overflow-hidden bg-ink-950 pb-14 pt-28 text-white xs:pb-16 sm:pb-20 sm:pt-32 md:pb-24 md:pt-36">
+      <Image
+        src="/images/brand/image.png"
+        alt=""
+        fill
+        className="object-cover object-center"
+        sizes="100vw"
+      />
+      {/* Match the homepage: industrial image with a neutral dark vignette */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/35" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/35 via-black/10 to-black/60" />
       <div
-        className="pointer-events-none absolute inset-0 opacity-20"
+        className="pointer-events-none absolute inset-0 opacity-15"
         style={{
           backgroundImage:
             "linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)",
@@ -25,9 +33,7 @@ export function PageHero({ eyebrow, title, description, children }: PageHeroProp
       {/* Bottom accent stripe */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[3px] bg-sun-band" />
 
-      {/* Floating ambient glows */}
-      <div className="pointer-events-none absolute right-[10%] top-[20%] h-32 w-32 rounded-full bg-orange-500/20 blur-3xl float-soft" />
-      <div className="pointer-events-none absolute bottom-[15%] left-[8%] h-40 w-40 rounded-full bg-flame-700/15 blur-3xl float-soft [animation-delay:1.5s]" />
+      <div className="pointer-events-none absolute bottom-[12%] left-[8%] h-40 w-40 rounded-full bg-orange-500/10 blur-3xl float-soft" />
 
       {/* Content */}
       <div className="container-site relative animate-fade-up">

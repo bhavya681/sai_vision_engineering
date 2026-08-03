@@ -57,6 +57,15 @@
    ───────────────────────────────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+main {
+  view-transition-name: main-content;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -85,6 +94,16 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(main-content) {
+    animation: 140ms ease-out both fadeOut;
+  }
+
+  ::view-transition-new(main-content) {
+    animation: 240ms var(--ease-smooth) both fadeIn;
+  }
+}
+
 ::selection {
   background: #fed7aa;
   color: #7c2d12;
@@ -105,6 +124,31 @@ video {
    LAYOUT UTILITIES
    ───────────────────────────────────────────────────────────────────────────── */
 @layer components {
+  /* Navbar state: no filled/dark active background */
+  .nav-item::after {
+    content: "";
+    position: absolute;
+    right: 0.875rem;
+    bottom: 0.3rem;
+    left: 0.875rem;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #ea580c, #f59e0b);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s var(--ease-smooth);
+  }
+
+  .nav-item:hover::after,
+  .nav-item.is-active::after {
+    transform: scaleX(1);
+  }
+
+  .mobile-nav-item.is-active {
+    background: #fff7ed;
+    box-shadow: inset 3px 0 0 #f97316;
+  }
+
   /* Main container — 1400px max with responsive padding */
   .container-site {
     width: 100%;
@@ -443,6 +487,32 @@ video {
     transform: scale(1.04);
   }
 
+  /* Individual client logo marquee */
+  .logo-track {
+    animation: logoScroll 52s linear infinite;
+    will-change: transform;
+  }
+
+  .logo-track-reverse {
+    animation-name: logoScrollReverse;
+    animation-duration: 58s;
+  }
+
+  .logo-marquee:hover .logo-track {
+    animation-play-state: paused;
+  }
+
+  .client-logo-card {
+    transition: transform 0.35s var(--ease-smooth), border-color 0.35s ease,
+      box-shadow 0.35s ease;
+  }
+
+  .client-logo-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(234, 88, 12, 0.35);
+    box-shadow: 0 14px 32px rgba(17, 17, 17, 0.1);
+  }
+
   /* ─────────────────── SKIP LINK ─────────────────── */
 
   .skip-link {
@@ -548,6 +618,11 @@ video {
   to   { opacity: 1; }
 }
 
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
 @keyframes slideDown {
   from { opacity: 0; transform: translateY(-10px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -556,6 +631,16 @@ video {
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
+}
+
+@keyframes logoScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-50% - 0.5rem)); }
+}
+
+@keyframes logoScrollReverse {
+  from { transform: translateX(calc(-50% - 0.5rem)); }
+  to   { transform: translateX(0); }
 }
 
 @keyframes floatSoft {
@@ -589,4 +674,16 @@ video {
 /* Pulse glow */
 .pulse-glow {
   box-shadow: 0 20px 50px rgba(234, 88, 12, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee {
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .logo-track {
+    animation: none !important;
+    transform: none !important;
+  }
 }
