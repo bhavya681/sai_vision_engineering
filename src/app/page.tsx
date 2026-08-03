@@ -4,7 +4,7 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { CategoryCard, ProductCard } from "@/components/ProductCards";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CtaBanner } from "@/components/CtaBanner";
-import { ClientMarquee } from "@/components/ClientMarquee";
+import { Partners } from "@/components/Partners";
 import { Reveal } from "@/components/Reveal";
 import { company } from "@/data/company";
 import { categories, getFeaturedProducts } from "@/data/products";
@@ -102,7 +102,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════
           CLIENT MARQUEE
           ═══════════════════════════════════════════════ */}
-      <ClientMarquee />
+      <Partners />
 
       {/* ═══════════════════════════════════════════════
           TRUST STRIP — ISO + Regions + Partners
