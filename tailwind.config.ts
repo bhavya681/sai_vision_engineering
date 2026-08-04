@@ -68,10 +68,10 @@ const config: Config = {
         sans:    ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        soft:  "0 4px 20px rgba(0, 0, 0, 0.07)",
-        lift:  "0 12px 40px rgba(0, 0, 0, 0.12)",
-        brand: "0 6px 24px rgba(234, 88, 12, 0.25)",
-        glow:  "0 0 0 4px rgba(249, 115, 22, 0.22)",
+        soft:  "0 4px 20px rgba(0, 0, 0, 0.05)",
+        lift:  "0 20px 40px rgba(0, 0, 0, 0.08), 0 8px 20px rgba(234, 88, 12, 0.15)",
+        brand: "0 8px 30px rgba(234, 88, 12, 0.3)",
+        glow:  "0 0 15px rgba(249, 115, 22, 0.4)",
       },
       transitionTimingFunction: {
         smooth: "cubic-bezier(0.22, 1, 0.36, 1)",
