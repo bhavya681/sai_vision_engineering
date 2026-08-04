@@ -14,10 +14,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon-48.png", sizes: "48x48", type: "image/png" },
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon-48.png", sizes: "192x192", type: "image/png" },
       { url: "/images/brand/logo.png", type: "image/png" },
     ],
-    shortcut: "/favicon.png",
+    shortcut: "/favicon-48.png",
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
