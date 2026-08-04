@@ -94,20 +94,21 @@ export function AIChatPanel({ isOpen, onClose }: Props) {
       </div>
 
       <div className="border-t border-gray-100 bg-white p-3 sm:p-4">
-        <form onSubmit={onSubmit} className="relative flex items-center">
+        <form onSubmit={onSubmit} className="relative flex items-center group mt-1">
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full blur opacity-0 group-focus-within:opacity-30 transition duration-500 pointer-events-none"></div>
           <input
             ref={inputRef}
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Ask a question..."
-            className="w-full rounded-full border border-gray-200 bg-gray-50/50 py-3 pl-4 pr-12 text-sm text-gray-900 placeholder:text-gray-400 focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-orange-500 disabled:opacity-50"
+            className="relative w-full rounded-full border border-gray-200/80 bg-white/90 backdrop-blur-md py-3.5 pl-5 pr-14 text-sm text-gray-900 shadow-sm placeholder:text-gray-400 focus:border-orange-400 focus:bg-white focus:outline-none focus:ring-4 focus:ring-orange-500/15 disabled:opacity-50 transition-all duration-300"
             disabled={isTyping}
           />
           <button
             type="submit"
             disabled={!input.trim() || isTyping}
-            className="absolute right-1.5 flex h-9 w-9 items-center justify-center rounded-full bg-orange-600 text-white transition-all hover:bg-orange-700 disabled:bg-gray-300"
+            className="absolute right-2 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-tr from-orange-600 to-orange-500 text-white shadow-md transition-all duration-300 hover:scale-105 hover:shadow-orange-500/30 disabled:scale-100 disabled:from-gray-300 disabled:to-gray-300 disabled:shadow-none disabled:text-gray-500"
             aria-label="Send message"
           >
             <Send className="h-4 w-4 shrink-0 -translate-x-[1px] translate-y-[1px]" />
