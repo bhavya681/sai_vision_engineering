@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CtaBanner } from "@/components/CtaBanner";
@@ -30,13 +29,6 @@ export default function CapabilitiesPage() {
             description="Quality management certification as shown on Sai Vision Engineering brand materials."
           />
           <div className="flex flex-col items-start gap-6 rounded-lg border border-orange-200/50 bg-orange-50 p-6 sm:flex-row sm:items-center sm:p-8">
-            <Image
-              src={company.brand.iso}
-              alt="ISO 9001:2015 Certified seal"
-              width={120}
-              height={120}
-              className="h-24 w-24 object-contain sm:h-28 sm:w-28"
-            />
             <div>
               <IsoBadge />
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-700">
@@ -66,19 +58,18 @@ export default function CapabilitiesPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-warm-panel text-white">
+      <section className="section-pad border-y border-gray-100 bg-[#f8f7f3]">
         <div className="container-site">
           <SectionHeading
             eyebrow="Flagship service"
             title="Glass-lined equipment service: relining of glass-lined reactors."
             description="Customized inspection and maintenance programs help minimize operational problems, with consultation facilities for glass-lined equipment."
-            light
           />
           <div className="grid gap-3 sm:grid-cols-3 sm:gap-4">
             {["Spark testing", "Thickness testing", "Visual inspection"].map((test) => (
-              <div key={test} className="surface-on-dark px-4 py-5 sm:px-5 sm:py-6">
-                <h3 className="font-display text-xl font-semibold text-white">{test}</h3>
-                <p className="mt-2 text-sm text-on-dark-muted">
+              <div key={test} className="surface-card px-4 py-5 sm:px-5 sm:py-6">
+                <h3 className="font-display text-xl font-semibold text-gray-900">{test}</h3>
+                <p className="mt-2 text-sm text-gray-600">
                   Performed during equipment handling stages as part of service programs.
                 </p>
               </div>

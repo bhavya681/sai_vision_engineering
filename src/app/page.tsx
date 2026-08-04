@@ -253,23 +253,19 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════
           WHY SAI VISION
           ═══════════════════════════════════════════════ */}
-      <section
-        className="section-pad"
-        style={{ background: "linear-gradient(160deg, #111111 0%, #1c1210 50%, #2a1810 100%)" }}
-      >
+      <section className="section-pad border-y border-gray-100 bg-[#f8f7f3]">
         <div className="container-site">
           <Reveal>
             <SectionHeading
               eyebrow="Why Sai Vision"
               title="Advantages that support reliable plant operations."
-              light
             />
           </Reveal>
           <div className="grid gap-2.5 xs:gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
             {company.whyChooseUs.map((item, index) => (
               <Reveal key={item} delay={(Math.min(index % 4, 3) + 1) as 1 | 2 | 3 | 4}>
-                <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 text-sm font-medium text-gray-100 transition-all duration-200 hover:border-orange-400/25 hover:bg-white/8 sm:px-5 sm:py-4">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-orange-500" aria-hidden="true" />
+                <div className="group flex items-center gap-3 rounded-xl border border-gray-200 bg-white px-4 py-3.5 text-sm font-medium text-gray-900 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-orange-200 hover:shadow-soft sm:px-5 sm:py-4">
+                  <span className="h-2 w-2 shrink-0 rounded-full bg-orange-500 transition-transform group-hover:scale-125" aria-hidden="true" />
                   {item}
                 </div>
               </Reveal>

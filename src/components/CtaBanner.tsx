@@ -21,27 +21,19 @@ export function CtaBanner({
     <section className="section-pad">
       <div className="container-site">
         <div
-          className="relative overflow-hidden rounded-2xl px-6 py-12 sm:px-10 sm:py-14 md:px-14 pulse-glow"
-          style={{
-            background: "linear-gradient(135deg, #111111 0%, #1c1210 50%, #2d1a0e 100%)",
-          }}
+          className="relative overflow-hidden rounded-2xl px-6 py-12 sm:px-10 sm:py-14 md:px-14 border border-gray-200 bg-[#f8f7f3] shadow-soft"
         >
-          {/* Ambient glows */}
-          <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-orange-500/15 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-12 -left-12 h-56 w-56 rounded-full bg-flame-700/12 blur-3xl" />
-          <div className="pointer-events-none absolute inset-0 bg-hero-sheen opacity-70" />
-
           {/* Top accent */}
           <div className="pointer-events-none absolute inset-x-0 top-0 h-[3px] bg-sun-band" />
 
           {/* Content */}
           <div className="relative max-w-3xl">
-            <p className="eyebrow eyebrow-on-dark">Project inquiry</p>
+            <p className="eyebrow">Project inquiry</p>
             <div className="accent-bar mt-3" />
-            <h2 className="mt-4 font-display text-2xl font-semibold text-white xs:text-3xl sm:text-[2.25rem] lg:text-4xl leading-tight">
+            <h2 className="mt-4 font-display text-2xl font-semibold text-gray-950 xs:text-3xl sm:text-[2.25rem] lg:text-4xl leading-tight">
               {title}
             </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-gray-300 sm:text-base lg:text-lg">
+            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-gray-600 sm:text-base lg:text-lg">
               {description}
             </p>
             <div className="mt-8 flex flex-col gap-3 xs:flex-row xs:flex-wrap">
@@ -53,7 +45,7 @@ export function CtaBanner({
               </Link>
               <Link
                 href={secondaryHref}
-                className="btn btn-ghost btn-lg w-full xs:w-auto"
+                className="btn btn-secondary btn-lg w-full xs:w-auto"
               >
                 {secondaryLabel}
               </Link>

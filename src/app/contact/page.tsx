@@ -28,7 +28,7 @@ export default function ContactPage() {
       />
 
       <section className="section-pad">
-        <div className="container-site grid gap-10 lg:grid-cols-12 lg:gap-14">
+        <div className="container-site grid gap-10 lg:grid-cols-12 lg:gap-14 items-start">
           {/* ── Left: contact info ── */}
           <div className="space-y-8 lg:col-span-5">
             {/* Direct contacts */}
