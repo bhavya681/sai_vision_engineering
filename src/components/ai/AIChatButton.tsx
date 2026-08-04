@@ -43,22 +43,17 @@ export function AIChatButton({ isOpen, onClick }: Props) {
           <span className="absolute inset-0 block animate-ping rounded-full border-2 border-orange-400 opacity-60" />
         )}
 
-        <div className="relative">
-          <div
-            className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${
+        <div className="relative flex h-6 w-6 items-center justify-center md:h-7 md:w-7">
+          <Bot
+            className={`absolute h-6 w-6 stroke-[2px] transition-all duration-300 md:h-7 md:w-7 ${
               isOpen ? "rotate-90 scale-0 opacity-0" : "rotate-0 scale-100 opacity-100"
             }`}
-          >
-            <Bot className="h-6 w-6 stroke-[2px] md:h-7 md:w-7" />
-          </div>
-
-          <div
-            className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${
+          />
+          <X
+            className={`absolute h-6 w-6 stroke-[2.5px] transition-all duration-300 md:h-7 md:w-7 ${
               isOpen ? "rotate-0 scale-100 opacity-100" : "-rotate-90 scale-0 opacity-0"
             }`}
-          >
-            <X className="h-6 w-6 stroke-[2.5px] md:h-7 md:w-7" />
-          </div>
+          />
         </div>
       </button>
     </div>
