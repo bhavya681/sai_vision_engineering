@@ -114,7 +114,8 @@ export default function AboutPage() {
           />
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {company.whyChooseUs.map((item) => (
-              <div key={item} className="rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-800 sm:px-5 sm:py-4">
+              <div key={item} className="group flex cursor-default items-center gap-3 rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-800 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-orange-200 hover:shadow-soft sm:px-5 sm:py-4">
+                <span className="h-2 w-2 shrink-0 rounded-full bg-orange-500 transition-transform duration-300 group-hover:scale-125" aria-hidden="true" />
                 {item}
               </div>
             ))}

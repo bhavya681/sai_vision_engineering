@@ -146,10 +146,10 @@ export function Header() {
                     </button>
                     <div
                       id="products-menu"
-                      className={`absolute left-1/2 top-[calc(100%+0.7rem)] w-80 -translate-x-1/2 origin-top rounded-2xl border border-gray-200 bg-white p-2.5 shadow-[0_20px_55px_rgba(17,17,17,0.18)] transition-all duration-200 ${
+                      className={`absolute left-1/2 top-[calc(100%+0.7rem)] w-80 -translate-x-1/2 rounded-2xl border border-gray-200 bg-white p-2.5 shadow-[0_20px_55px_rgba(17,17,17,0.12)] transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] ${
                         productsOpen
-                          ? "visible translate-y-0 scale-100 opacity-100"
-                          : "invisible -translate-y-2 scale-95 opacity-0"
+                          ? "visible translate-y-0 opacity-100"
+                          : "invisible -translate-y-2 opacity-0"
                       }`}
                     >
                       <Link

@@ -88,13 +88,13 @@ export default async function ProductDetailPage({ params }: Props) {
           <nav className="mb-6 text-xs text-gray-700 sm:mb-8 sm:text-sm" aria-label="Breadcrumb">
             <ol className="flex flex-wrap items-center gap-2">
               <li>
-                <Link href="/products" className="hover:text-orange-700">
+                <Link href="/products" className="transition-colors duration-200 hover:text-orange-700">
                   Products
                 </Link>
               </li>
               <li aria-hidden>/</li>
               <li>
-                <Link href={`/products/${categorySlug}`} className="hover:text-orange-700">
+                <Link href={`/products/${categorySlug}`} className="transition-colors duration-200 hover:text-orange-700">
                   {category?.name}
                 </Link>
               </li>
@@ -104,7 +104,7 @@ export default async function ProductDetailPage({ params }: Props) {
           </nav>
 
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
-            <div className="relative aspect-[5/4] overflow-hidden rounded-md border border-gray-200 bg-gray-50">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-xl border border-gray-200 bg-gray-50 transition-shadow duration-300 hover:shadow-soft">
               <Image
                 src={product.image}
                 alt={product.name}
@@ -173,7 +173,7 @@ export default async function ProductDetailPage({ params }: Props) {
               <h2 className="font-display text-2xl font-semibold text-gray-900">Specifications</h2>
               <dl className="mt-4 space-y-3 text-sm">
                 {product.specifications.map((spec) => (
-                  <div key={spec.label} className="border-b border-gray-200 pb-3">
+                  <div key={spec.label} className="border-b border-gray-200 pb-3 transition-colors duration-200 hover:bg-gray-50/50">
                     <dt className="font-semibold text-gray-900">{spec.label}</dt>
                     <dd className="mt-1 text-gray-700">{spec.value}</dd>
                   </div>

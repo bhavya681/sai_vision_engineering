@@ -12,7 +12,7 @@ export function CategoryCard({ category }: { category: Category }) {
     <Reveal>
       <Link
         href={`/products/${category.slug}`}
-        className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-soft transition-all duration-[400ms] ease-smooth hover:-translate-y-1.5 hover:border-orange-200 hover:shadow-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2"
+        className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-soft transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-1 hover:border-orange-200 hover:shadow-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2"
       >
         {/* Image container with diagonal sweep */}
         <div className="image-anime relative aspect-[16/10] overflow-hidden border-b border-gray-100 bg-gradient-to-br from-gray-50 to-orange-50/40">
@@ -21,12 +21,12 @@ export function CategoryCard({ category }: { category: Category }) {
             alt={category.name}
             fill
             priority={false}
-            className="object-contain p-4 transition-all duration-[600ms] ease-smooth group-hover:scale-[1.06] group-hover:brightness-105 sm:p-5"
+            className="object-contain p-4 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.03] group-hover:brightness-105 sm:p-5"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
           {/* Top accent bar */}
           <div
-            className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-sun-band transition-transform duration-[400ms] ease-smooth group-hover:scale-x-100"
+            className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-sun-band transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-x-100"
             aria-hidden="true"
           />
           <span className="absolute right-3 top-3 rounded-full border border-orange-100 bg-white/90 px-2.5 py-1 text-[0.6rem] font-extrabold uppercase tracking-[0.14em] text-orange-700 shadow-sm backdrop-blur transition-all duration-300 group-hover:bg-orange-50 group-hover:shadow-md">
@@ -77,7 +77,7 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <Reveal>
-      <article className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-soft transition-all duration-[400ms] ease-smooth hover:-translate-y-1.5 hover:border-orange-200 hover:shadow-lift">
+      <article className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-soft transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-1 hover:border-orange-200 hover:shadow-lift">
         {/* Product image with diagonal sweep */}
         <Link
           href={productHref}
@@ -89,13 +89,13 @@ export function ProductCard({ product }: { product: Product }) {
             alt={product.name}
             fill
             priority={false}
-            className="object-contain p-4 transition-all duration-[600ms] ease-smooth group-hover:scale-[1.06] group-hover:brightness-105 sm:p-5"
+            className="object-contain p-4 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.03] group-hover:brightness-105 sm:p-5"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
 
           {/* Brand accent on hover */}
           <span
-            className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-sun-band transition-transform duration-[400ms] ease-smooth group-hover:scale-x-100"
+            className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-sun-band transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-x-100"
             aria-hidden="true"
           />
         </Link>

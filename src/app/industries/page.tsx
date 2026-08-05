@@ -55,7 +55,7 @@ export default function IndustriesPage() {
               <Link
                 key={c.slug}
                 href={`/products/${c.slug}`}
-                className="rounded-md border border-[#d4a017] bg-[#fff8e8] px-3 py-2.5 text-sm font-bold text-[#1a1208] transition hover:border-[#e85d04] hover:bg-white sm:px-4 sm:py-3"
+                className="rounded-md border border-orange-200 bg-orange-50 px-3 py-2.5 text-sm font-bold text-gray-900 transition-all duration-300 hover:-translate-y-0.5 hover:border-orange-300 hover:bg-white hover:shadow-sm sm:px-4 sm:py-3"
               >
                 {c.name}
               </Link>

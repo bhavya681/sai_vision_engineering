@@ -88,7 +88,7 @@ export function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-sm text-gray-600 transition-colors hover:text-orange-700 focus-visible:text-orange-700 focus-visible:outline-none focus-visible:underline"
+                    className="text-sm text-gray-600 transition-all duration-300 hover:translate-x-0.5 hover:text-orange-700 focus-visible:text-orange-700 focus-visible:outline-none focus-visible:underline"
                   >
                     {label}
                   </Link>
@@ -107,7 +107,7 @@ export function Footer() {
                 <li key={c.slug}>
                   <Link
                     href={`/products/${c.slug}`}
-                    className="text-sm text-gray-600 transition-colors hover:text-orange-700 focus-visible:text-orange-700 focus-visible:outline-none focus-visible:underline"
+                    className="text-sm text-gray-600 transition-all duration-300 hover:translate-x-0.5 hover:text-orange-700 focus-visible:text-orange-700 focus-visible:outline-none focus-visible:underline"
                   >
                     {c.name}
                   </Link>

@@ -47,7 +47,7 @@ function LogoCard({ client }: { client: (typeof clients)[number] }) {
         alt=""
         width={300}
         height={120}
-        className="h-full w-full object-contain transition-all duration-500 ease-smooth group-hover:scale-105"
+        className="h-full w-full object-contain grayscale-[30%] brightness-[0.97] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.02] group-hover:grayscale-0 group-hover:brightness-100"
         sizes="240px"
       />
       <span className="pointer-events-none absolute inset-x-4 bottom-1.5 truncate text-center text-[0.58rem] font-bold uppercase tracking-[0.12em] text-gray-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
