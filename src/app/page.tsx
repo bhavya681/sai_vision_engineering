@@ -264,7 +264,7 @@ export default function HomePage() {
           <div className="grid gap-2.5 xs:gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
             {company.whyChooseUs.map((item, index) => (
               <Reveal key={item} delay={(Math.min(index % 4, 3) + 1) as 1 | 2 | 3 | 4}>
-                <div className="group flex items-center gap-3 rounded-xl border border-gray-200 bg-white px-4 py-3.5 text-sm font-medium text-gray-900 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-orange-200 hover:shadow-soft sm:px-5 sm:py-4">
+                <div className="group flex cursor-pointer items-center gap-3 rounded-xl border border-gray-200 bg-white px-4 py-3.5 text-sm font-medium text-gray-900 shadow-sm transition-all duration-[350ms] ease-smooth hover:-translate-y-1 hover:border-orange-200 hover:shadow-soft sm:px-5 sm:py-4">
                   <span className="h-2 w-2 shrink-0 rounded-full bg-orange-500 transition-transform group-hover:scale-125" aria-hidden="true" />
                   {item}
                 </div>
@@ -326,7 +326,7 @@ export default function HomePage() {
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {services.slice(0, 6).map((service, index) => (
               <Reveal key={service.title} delay={(Math.min(index, 3) + 1) as 1 | 2 | 3 | 4}>
-                <div className="surface-card h-full p-4 sm:p-5 md:p-6">
+                <div className="surface-card h-full cursor-pointer p-4 sm:p-5 md:p-6">
                   <h3 className="font-display text-lg font-semibold text-gray-900 sm:text-xl">
                     {service.title}
                   </h3>
