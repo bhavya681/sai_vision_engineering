@@ -94,7 +94,7 @@ export function ProductsExplorer({
           <button
             type="button"
             onClick={() => { setQuery(""); setCategory("all"); }}
-            className="mt-4 text-sm font-semibold text-orange-700 hover:text-orange-800 hover:underline"
+            className="mt-4 text-sm font-semibold text-orange-700 transition-colors duration-250 hover:text-orange-900 hover:underline"
           >
             Clear filters
           </button>

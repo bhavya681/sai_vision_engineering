@@ -20,9 +20,7 @@ export function CtaBanner({
   return (
     <section className="section-pad">
       <div className="container-site">
-        <div
-          className="relative overflow-hidden rounded-2xl px-6 py-12 sm:px-10 sm:py-14 md:px-14 border border-gray-200 bg-[#f8f7f3] shadow-soft"
-        >
+        <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-[#f8f7f3] px-6 py-12 shadow-soft sm:px-10 sm:py-14 md:px-14">
           {/* Top accent */}
           <div className="pointer-events-none absolute inset-x-0 top-0 h-[3px] bg-sun-band" />
 
@@ -37,10 +35,7 @@ export function CtaBanner({
               {description}
             </p>
             <div className="mt-8 flex flex-col gap-3 xs:flex-row xs:flex-wrap">
-              <Link
-                href={primaryHref}
-                className="btn btn-primary btn-lg w-full xs:w-auto"
-              >
+              <Link href={primaryHref} className="btn btn-primary btn-lg w-full xs:w-auto">
                 {primaryLabel}
               </Link>
             </div>

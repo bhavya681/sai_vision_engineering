@@ -93,8 +93,10 @@ export function Header() {
     <>
       <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-2 pt-2 sm:px-4 sm:pt-3">
         <div
-          className={`pointer-events-auto mx-auto flex max-w-[1380px] items-center justify-between gap-3 overflow-visible rounded-2xl border border-white/70 bg-white/95 px-3 py-2 shadow-[0_10px_35px_rgba(17,17,17,0.12)] backdrop-blur-xl transition-all duration-300 sm:px-4 lg:px-5 ${
-            scrolled ? "translate-y-0 shadow-[0_12px_38px_rgba(17,17,17,0.16)]" : ""
+          className={`pointer-events-auto mx-auto flex max-w-[1380px] items-center justify-between gap-3 overflow-visible rounded-2xl border border-white/70 bg-white/90 px-3 py-2 shadow-[0_10px_35px_rgba(17,17,17,0.12)] backdrop-blur-xl transition-all duration-300 sm:px-4 lg:px-5 ${
+            scrolled
+              ? "bg-white border-gray-200/50 shadow-[0_12px_38px_rgba(17,17,17,0.16)]"
+              : ""
           }`}
         >
           <Link
@@ -195,7 +197,7 @@ export function Header() {
           <div className="flex shrink-0 items-center gap-2">
             <Link
               href="/request-quote"
-              className="group hidden items-center gap-2 rounded-xl bg-gradient-to-r from-orange-600 to-amber-500 px-4 py-2.5 text-sm font-bold text-white shadow-[0_7px_20px_rgba(234,88,12,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_26px_rgba(234,88,12,0.36)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 sm:flex"
+              className="group hidden items-center gap-2 rounded-xl bg-gradient-to-r from-orange-600 to-amber-500 px-4 py-2.5 text-sm font-bold text-white shadow-[0_7px_20px_rgba(234,88,12,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_10px_26px_rgba(234,88,12,0.36)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 sm:flex"
             >
               <span className="hidden lg:inline">Request a Quote</span>
               <span className="lg:hidden">Quote</span>
@@ -313,7 +315,7 @@ export function Header() {
           <Link
             href="/request-quote"
             onClick={closeMobile}
-            className="group flex min-h-12 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-600 to-amber-500 px-4 text-sm font-bold text-white shadow-brand transition-transform duration-300 hover:-translate-y-0.5"
+            className="group flex min-h-12 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-600 to-amber-500 px-4 text-sm font-bold text-white shadow-brand transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_10px_26px_rgba(234,88,12,0.36)]"
           >
             Request a Quote
             <Arrow />

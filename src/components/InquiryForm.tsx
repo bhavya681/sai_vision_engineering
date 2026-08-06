@@ -92,7 +92,8 @@ export function InquiryForm({ defaultProduct = "" }: Props) {
           </div>
         </div>
         <p className="mt-4 text-sm leading-relaxed text-gray-600">
-          Your inquiry has been recorded. Connect a backend email service to deliver messages to the company inbox.
+          Your inquiry has been recorded. Our team will review your requirement and follow up
+          with clarification questions or a quotation at the earliest.
         </p>
       </div>
     );

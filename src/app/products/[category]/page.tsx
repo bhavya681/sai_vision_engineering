@@ -42,15 +42,15 @@ export default async function CategoryPage({ params }: Props) {
         <div className="container-site">
           <div className="mb-8 flex flex-wrap gap-2">
             {categories.map((c) => (
-              <Link
-                key={c.slug}
-                href={`/products/${c.slug}`}
-                className={`rounded-md px-3 py-2 text-[0.65rem] font-bold uppercase tracking-[0.12em] transition focus-visible:ring-2 focus-visible:ring-sun-400 sm:text-xs ${
-                  c.slug === slug
-                    ? "bg-[#e85d04] text-white shadow-soft"
-                    : "border border-[#d4a017] bg-white text-[#1a1208] hover:border-[#e85d04] hover:bg-[#fff8e8]"
-                }`}
-              >
+             <Link
+                 key={c.slug}
+                 href={`/products/${c.slug}`}
+                 className={`rounded-md px-3 py-2 text-[0.65rem] font-bold uppercase tracking-[0.12em] transition-colors duration-250 hover:bg-orange-50 hover:text-orange-700 focus-visible:ring-2 focus-visible:ring-sun-400 sm:text-xs ${
+                   c.slug === slug
+                     ? "bg-orange-600 text-white shadow-soft"
+                     : "border border-orange-200 bg-white text-gray-800"
+                 }`}
+               >
                 {c.name}
               </Link>
             ))}
