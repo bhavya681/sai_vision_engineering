@@ -43,12 +43,12 @@ export function CtaBanner({
               >
                 {primaryLabel}
               </Link>
-              <Link
+              {/* <Link
                 href={secondaryHref}
                 className="btn btn-secondary btn-lg w-full xs:w-auto"
               >
                 {secondaryLabel}
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
