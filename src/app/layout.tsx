@@ -3,7 +3,6 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { company } from "@/data/company";
-import { AIChatWidget } from "@/components/ai/AIChatWidget";
 
 export const metadata: Metadata = {
   metadataBase: new URL(company.siteUrl),
@@ -71,7 +70,6 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <AIChatWidget />
       </body>
     </html>
   );

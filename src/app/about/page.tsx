@@ -50,7 +50,7 @@ export default function AboutPage() {
           </Reveal>
 
           {/* Image panel */}
-          <Reveal delay={2} className="media-frame relative min-h-[220px] bg-gray-900 xs:min-h-[260px] sm:min-h-[340px]">
+          <Reveal delay={2} className="media-frame relative min-h-[220px] bg-gray-700 xs:min-h-[260px] sm:min-h-[340px]">
             <Image
               src="/images/products/img-4.png"
               alt="Process vessels and condensers"
@@ -58,7 +58,7 @@ export default function AboutPage() {
               className="object-contain p-2"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            <div className="absolute inset-x-0 top-0 z-[2] h-[3px] bg-sun-band" />
+            <div className="absolute inset-x-0 top-0 z-[2] h-[3px]" />
             <div className="absolute inset-x-0 bottom-0 z-[2] bg-gradient-to-t from-black/80 via-black/50 to-transparent p-4 sm:p-5">
               <p className="text-sm text-gray-200">
                 Precisely fabricated equipment with sturdy construction, long service

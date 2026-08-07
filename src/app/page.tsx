@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { CtaBanner } from "@/components/CtaBanner";
 import { Partners } from "@/components/Partners";
 import { Reveal } from "@/components/Reveal";
+import { AIChatWidget } from "@/components/ai/AIChatWidget";
 import { company } from "@/data/company";
 import { categories, getFeaturedProducts } from "@/data/products";
 import { industries } from "@/data/industries";
@@ -373,6 +374,8 @@ export default function HomePage() {
       </section>
 
       <CtaBanner />
+
+      <AIChatWidget />
     </>
   );
 }

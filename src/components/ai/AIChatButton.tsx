@@ -33,7 +33,7 @@ export function AIChatButton({ isOpen, onClick }: Props) {
         aria-label={isOpen ? "Close AI Assistant" : "Open AI Assistant"}
         aria-expanded={isOpen}
         aria-controls="ai-chat-panel"
-        className="peer relative flex h-14 w-14 items-center justify-center rounded-full border border-orange-500/30 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 text-white shadow-[0_10px_30px_rgba(234,88,12,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-[0_16px_40px_rgba(234,88,12,0.45)] active:translate-y-0 active:scale-95 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-300 md:h-16 md:w-16"
+        className="peer relative flex h-12 w-12 items-center justify-center rounded-full border border-orange-500/30 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 text-white shadow-[0_10px_30px_rgba(234,88,12,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-[0_16px_40px_rgba(234,88,12,0.45)] active:translate-y-0 active:scale-95 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-orange-300 md:h-14 md:w-14"
       >
         {/* Initial pulse */}
         {showPulse && !isOpen && (
@@ -44,14 +44,14 @@ export function AIChatButton({ isOpen, onClick }: Props) {
         )}
 
         {/* Icon */}
-        <div className="relative flex h-7 w-7 items-center justify-center">
+        <div className="relative flex h-6 w-6 items-center justify-center">
           <Bot
             className={`absolute transition-all duration-300 ${
               isOpen
                 ? "scale-0 rotate-90 opacity-0"
                 : "scale-100 rotate-0 opacity-100"
             }`}
-            size={28}
+            size={24}
             strokeWidth={2.2}
           />
 
@@ -61,7 +61,7 @@ export function AIChatButton({ isOpen, onClick }: Props) {
                 ? "scale-100 rotate-0 opacity-100"
                 : "scale-0 -rotate-90 opacity-0"
             }`}
-            size={28}
+            size={24}
             strokeWidth={2.5}
           />
         </div>

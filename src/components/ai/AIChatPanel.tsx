@@ -72,9 +72,10 @@ export function AIChatPanel({ isOpen, onClose }: Props) {
 
   if (!isOpen) return null;
 
+  // Make the border radius consistently rounded at the top for all screen sizes
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-50 flex h-[85vh] max-h-[800px] flex-col overflow-hidden rounded-t-2xl bg-[#fafafa] shadow-[0_-8px_40px_rgba(0,0,0,0.12)] ring-1 ring-black/5 sm:bottom-24 sm:left-auto sm:right-6 sm:h-[600px] sm:w-[400px] sm:rounded-2xl"
+      className="fixed bottom-0 left-0 right-0 z-50 flex h-[70vh] max-h-[600px] flex-col overflow-hidden rounded-t-2xl bg-[#fafafa] shadow-[0_-8px_40px_rgba(0,0,0,0.12)] ring-1 ring-black/5 sm:bottom-24 sm:left-auto sm:right-6 sm:h-[480px] sm:w-[400px] sm:rounded-2xl"
       role="dialog"
       aria-label="Sai Vision AI Assistant"
       aria-modal="true"
